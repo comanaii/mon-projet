@@ -20,9 +20,9 @@
         </div>
         <nav>
             <ul class="menu">
-                <li><a href="#story"><img src="mon-projet/ressources/images/Bateaux pirate.png" alt="Bateaux pirate" title="Mon Histoire" loading="lazy"></a></li>
-                <li><a href="#travels"><img src="mon-projet/ressources/images/Mer.png" alt="Mer"title="Mes Voyages" loading="lazy"></a></li>
-                <li><a href="#letters"><img src="mon-projet/ressources/images/lettres.png" title="Les lettres du Comanaï"alt="Lettres" loading="lazy"></a></li>
+                <li><a href="#story"><img src="ressources/images/Bateaux pirate.png" alt="Bateaux pirate" title="Mon Histoire" loading="lazy"></a></li>
+                <li><a href="#travels"><img src="ressources/images/mer.png" alt="Mer"title="Mes Voyages" loading="lazy"></a></li>
+                <li><a href="#letters"><img src="ressources/images/lettres.png" title="Les lettres du Comanaï"alt="Lettres" loading="lazy"></a></li>
             </ul>
         </nav>
     </header>
@@ -55,9 +55,25 @@
     </section>
 
     <section id="letters">
+        
         <h2>Les lettres du Comanaï</h2>
+
+        <div class="tab-container">
+            <div class="tabs">
+                <button class="tab-link active" onclick="openTab(event, 'letter1')">Lettre 1</button>
+                <button class="tab-link" onclick="openTab(event, 'letter2')">Lettre 2</button>
+                <button class="tab-link" onclick="openTab(event, 'letter3')">Lettre 3</button>
+                <button class="tab-link" onclick="openTab(event, 'letter4')">Lettre 4</button>
+                <button class="tab-link" onclick="openTab(event, 'letter5')">Lettre 5</button>
+                <button class="tab-link" onclick="openTab(event, 'letter6')">Lettre 6</button>
+
+
+
+            </div>
+
         <div class="content-container">
-            <h3>Lettre 1 : Les Pirates de l'ombre</h3>
+            <div id="letter1" class="tab-content active">
+            <h3>Lettre 1 : Les Pirates de l'ombre </h3>
             <h4>Première partie : Les femmes pirates</h4>
             <p>Le temps d’un poème, je vais vous conter l’histoire de ces femmes aux milles blasphèmes, c’est dans l’obscurité qu’elles sommeillent sans sourciller, après ces quelques mots vous verrez en elles un doux plaisir charnel et les dieux eux-mêmes auront l’envie de descendre du ciel.</p>
             <p>Dans les abysses de cette pièce aux divers ennuis, je vis ces jeunes sirènes qui dégageaient en elles de légers soucis. Je suis rempli de confusion, mais je vais vous faire quand même leurs présentations. L’une de ces pirates est une guerrière avec un étrange caractère, elle adore s’agripper aux cordes dénouées et rentrer dans des plaques en fer forgées. Elle adore traiter ses aînés de vieille branche desséchée mais en réalité c’est une jeune femme aux courbures éreintées.</p>
@@ -66,6 +82,55 @@
             <p>L’histoire continue, la pirate au caractère changeant se met à nu. Je l’ai vue se transformer, en un instant la calme et paisible pirate met rentré dedans, ce fut un dur souvenir mais la prochaine fois je penserai à ne pas rire. Triste et voulant s’amuser elle pourrait vous laisser pour un simple carré de chocolat caramélisé.</p>
             <p>La suivante et la dernière à de folles histoires à vous faire tomber à terre, et son caractère joyeux fait beaucoup d’envieux. La confiance de cette pirate a été perdue, maintenant elle vit autour de mille animaux qui lui ont rendu. Mais prenez garde, sa tendance à chanter est une vraie plaie pour l’humanité.</p>
             <p>Ce chapitre n’est qu’une courte description, mais sur ce vaste océan dans l’abandon, j’aurai encore le temps d’écrire des mots sans réfléchir et mes pensées ne cesseront d’être troublées par ces pirates de l’obscurité.</p>
+            </div>
+        <!-- Nouvelle lettre -->
+            <div id="letter2" class="tab-content active">
+            <h3>Lettre 2 : Les Pirates de l'ombre</h3>
+            <h4>Deuxième partie : Pensées intimes</h4>
+            <p>Dans ces longs couloirs éclairés mais abandonnés, les pensées de ces pirates effarouchées viennent caresser mon esprit troublé. Le temps est passé et je peux maintenant vous raconter ce qui se passe dans leurs petites têtes endiablées.</p>
+            <p>Pour mieux vous souvenir de leurs noms je vous citerai leurs surnoms, je vais me risquer à prendre un éclair car après ces quelques mots elles seront en colère. Roulement de tambour puisque la première c’est Xéna la guerrière. Durant ce long voyage je l’ai observé, rien d’étonnant, je suis juste à côté. La pauvre pirate a du se faire marabouter, la maladie la envahie, je la vois tout fatigué et engourdi  mais elle ose quand même me traiter de pépé aigri. De nature à se plaindre tout le temps, c’est un vrai bol d’air pur que je ressens, mais elle peut sortir des mots choquants. Un jour elle me parla sans transition, que son mal de pouce était lié à sa masturbation. Cette jeune guerrière à un corps très luxuriant, à faire bander un impuissant, ce n’est pas pour rien qu’on lui vole ses sous-vêtements. Elle vit dans un monde féerique, toujours joyeuse et excentrique, bon courage à celui qu’il la pratique. Ce conte continu sans cesse car voici la pirate aux belles fesses. Courtisé par de nombreuses créatures bien arrosées, elle n’hésite à leur rappelé « Allez-vous faire enculer ». Je me suis égaré mais malheureusement c’est la vérité, ce sont ces mots qu’elle a employés. Le plus amusant, c’est qu’avec ces amis c’est une petite brute, et elle n’hésitera pas à vous traiter de tête de pute.  Ange un jour, barbare un autre jour, la voir manger peut vous dégoûter, gare à vous, ne restez pas à coté elle va tout recracher. Cette belle pirate à l’allure de princesse est quand même très amusante, pleine de promesses, et elle cache en elle une âme perverse. Son penchant lubrique la pousse à vouloir essayer le yoga tantrique, mais ne lui en parler pas trop elle est vite en panique surtout si elle doit le faire avec un trompettiste excentrique. Même après ces légers mauvais côtés je dois vous avouer que cette créature aux cheveux ébouriffés est mon préféré.</p>
+            <p>La suite de cette histoire est loin d’être terminé, il me reste à vous conter  le récit un peu exagéré de ces autres pirates de l’ombre un peu trop déjantés.</p>
+            </div>
+
+            <div id="letter3" class="tab-content active">
+            <h3>Lettre 3 : Les Pirates de l'ombre</h3>
+            <h4>Troisième partie : Pensées intimes Partie 2</h4>
+            <p>Sur ces lointaines rives ensablées, je croyais avoir tout vu sans me douter, que de telles pirates pouvaient exister. De façon poétique, je vais vous conter leurs aspects lubriques.</p>
+            <p>Place à présent à cette pirate au doux miaulement, prenez garde à ne pas trop l’embêter violemment, car la pirate mimi chat peut vous détruire une couille en un instant. La jeune femelle est parfois dans l’abandon, elle est un peu trop en manque d’affection, elle peut s’agripper à vous tel un morpion. Mais je peux vous certifier, que ce petit brin de fille est là pour nous amuser, toujours à la recherche de nouvelles insultes, elle arrive à nous sortir des phrases cultes comme « fruits des bois », « jambonneau », « ptite crotte » etc. Son cœur est torturé pour quelqu’un qui préfère jouer et boire avec des hommes musclés. En voyant cela sans s’émouvoir, elle osa dans le désespoir faire un pacte avec un homme à l’âme noire. Une page se tourne sur ce doux visage et la pirate carte d’or est en première page. Calme et posé, ne lui montré en aucun cas du chocolat caramélisé, si vous le faite, courez. Son passe-temps je peux vous le décrire, tel un koala, 22 heures de suite elle peut dormir. Cette pirate est tempétueuse, ne pensez même pas à rire, sinon vous allez souffrir, je le sais, je garde un mauvais souvenir. Passé un temps, elle ramait le soleil levant pour choper des poissons en un instant, j’étais avec elle et je gagnais rarement. Ce chapitre se ferme en un clic, maintenant voici la plus excentrique, la pirate tectonique. Cette créature est en mouvement, elle chante, elle danse, mais où sont ses calmants ? Parfois trop excité, elle peut avoir des montées de lait d’une fulgurante rapidité, je l’ai vu et cela m’a impressionné. Beaucoup de rumeurs sur cette jeune pirate tatoué, mais sa fureur a réussi à les calmées, maintenant il lui reste à gérer un ogre bougon énervé, spécialisé dans l’information erronée.</p>
+            <p>Je vous l’avais promis, les pirates de l’ombre ont beaucoup de soucis, mais sans elles je ne pourrais pas écrire tant de récits. C’est sur ces mots que ce conte se fini mais mes pensées sont infinies, et je vous promets d’autres histoires un peu plus sexy…</p>
+            </div>
+
+            <div id="letter4" class="tab-content">
+                <h3>Lettre 4 : LES SOUPIRS DES OCEANS</h3>
+                <h4>Première partie</h4>
+                <p>Dans l’immensité des océans, les sirènes d’un autre temps attendent patiemment, elles veulent jouir, pour que dans la nuit on entende leurs doux soupirs.</p>
+                <p>Sur les rives arides des mers reculées, une brune créature exaltée commence à se toucher, elle a vu l’homme qui pourra la faire crier du couché au levé. La sirène ténébreuse était d’une rare beauté, on pouvait voir dans ses yeux les flammes d’un désir enflammé que nul ne pouvait tempérer. Elle continua à l’observer, sa langue rugueuse, délicate se mit à effleurer ses lèvres suâtes, elle voulait se faire prendre à quatre pattes par ce spartiate. Ses soupirs commençaient à se faire sentir, sa main fine, soigné caressa sa belle poitrine bien gondé, entre ses deux merveilles du monde coulait en sa gorge les gouttes d’un plaisir endiablé. Le dieu des océans est à l’agonie, il ne peut pas toucher terre pour la monter en l’air. La main de cette nymphe descendit très doucement, son corps transpirait abondement avec une telle aisance, elle se mit en transe quand un de ses doigts atteignit le puy de jouissance.</p>
+                <p>Les dieux ont fermé les yeux, la fougue de cette sublime princesse avait fait plier les cieux. Elle veut de l’action, et faire entendre à Cupidon la puissance de ses pulsions. Son doigt touchait encore son minois, une goutte s’échappa le long de ces belles parois, elle descendit le long de ses belles jambes dorées et elle soupira « Prend moi ». Dans la nuit, l’homme entendu ce soupir, il ne pouvait plus réfléchir, il voulait juste la gravir et entendre ces doux murmures sans faiblir. L’homme athlétique, sculpté dans un marbre d’une rare qualité déliât sa langue forte et bien travaillé, il lécha l’oreille de cette déesse de façon attentionné, il lui soupira « Personne ne pourra te sauver, tu auras beau crier, je ne m’arrêterai pas jusqu’à que la flamme qui est en toi ne saura apaiser ». A ce moment-là, elle prit la lance de ce guerrier dans la main, elle la malaxa, les muscles du gladiateur se contractèrent, dans l’Olympe s’était la guerre. Les mains fortes de ce démon tenaient fermement les courbes de cette nymphe en ébullition. Les belles fesses de la princesse rougissaient après tant de tendresse, il lui mordilla un téton avec délicatesse. Tant de prouesses, la demoiselle en détresse s’abaisse, sa bouche pulpeuse souffla sur le bras armé de ce guerrier, elle le suça d’une manière insoupçonnée. En la voyant à genoux, les êtres ailés étaient jaloux, ils veulent faire partie de cette joute passionnée et se délecter de ce plaisir non quantifié.</p>
+                <p>La nuit s’obscurcit, la langue de la princesse la bien durcit, l’homme veut lui donner autant de douceur charnelle, elle écarta ses jambes douces tel une pucelle, elle tremblait, et elle voulait atteindre le septième ciel. Il posa ses mains imposantes sur les cuisses de cette belle, sa langue fourchue écarta les lèvres de cette sirène du jardin d’Eden, l’odeur et la chaleur de ce gouffre charnel le rendirent fou, il voulait passer par tous les trous.</p>
+                <p>Les dieux étaient moroses, leurs âmes avaient vu deux esprits en osmoses, ils étaient condamnés à regarder cet ébat passionné sans pouvoir le toucher. La sombre nuit sera longue et intense, les soupirs restent en suspenses, le monde est en pénitence.</p>
+            </div>
+
+            <div id="letter5" class="tab-content">
+                <h3>Lettre 5 : LES SOUPIRS DES OCEANS</h3>
+                <h4>Deuxième partie</h4>
+                <p>Les portes du paradis se sont ouvertes, les dieux sont en alerte, le temps d’une caresse la belle princesse soupirait sans cesse.</p>
+                <p>Les vents se déchaînent sur la plaine des âmes en peine, le plaisir est intense dans ce milieu obscure qui éveille les sens. La déesse murmura à l’oreille de son étalon « Je m’appelle Titania, mon corps est à toi, ne t’arrête surtout pas avant que mon âme ne traverse l’au-delà ». Le jeune et performant champion ressentit de l’exaltation, ses yeux étaient remplit d’une réelle passion pouvant transpercer le cœur de Cupidon. En un instant il lui susurra « Je m’appelle Néron, mon esprit est en palpitation, je suis ton pion, je vais continuer à te fourrer comme un guerrier remplit de dévotion ». La douce Titania était allongée sur un lit de soie vêtu, son corps nu transpirait en continu, son fruit défendu avait bien été ramoné une bonne parti de la soirée. Héron s’allongea sur elle, il l’embrassa délicatement tel une pucelle, son membre frottait subtilement le bas de ce ventre charnel. Le minois de cette belle était doux, lisse et ruisselant d’un désir éternel. Le jeune prince prit fermement les deux seins de Titania, la main de cette douce commença à serrer le drap, ses jambes suâtes s’écartèrent pour laisser place à la lance de guerre de ce spartiate prêt pour la guerre.</p>
+                <p>Le royaume des dieux tomba en un fracas, ils pouvaient ressentir l’odeur de cet ébat. Le membre de Néron transperça fortement les lèvres de Titania, ses seins se durcirent et dans l’Olympe on entendit son soupir. Elle agrippa le dos musclé et dur de son étalon impur, elle releva ses jambes obscures, on entendit un murmure « Encore, encore fais-moi jouir jusqu’à la mort, je veux sentir en moi ton corps dur et fort ». Après ses paroles endiablées, l’excitation de Néron commença à s’amplifier. Il la retourna, il prit les belles fesses de cette diablesse, ce démon lui lécha son abricot avec tendresse, puis il remonta légèrement pour fourrer sa langue dans l’autre trou avec finesse. Titânia devenait folle, une brise légère prit son envol vers le visage de Néron avant de toucher sol. Les veines du guerrier étaient grandement gonflées, il déposa le bout de sa lance sur son fruit trempé avant de le pénétrer.</p>
+                <p>Dans les limbes d’un temps oublié, les dieux perdirent l’esprit devant une telle volupté. Héron donnait des coups de reins puissants, les cieux entendaient le bruit assourdissant de ces deux corps foudroyants. L’odeur de la pièce pouvait faire fondre n’importe quelles créatures célestes, Néron se retira lentement pour lui mordiller subtilement ses belles fesses avec beaucoup de tendresse.</p>
+                <p>La nuit remplit de soupir insoumis, déesse et démon étaient partis pour durer dans une confrontation de désirs enflammé et nul ne pouvait les calmer.</p>
+            </div>
+            
+            <div id="letter6" class="tab-content">
+                <h3>Lettre 6 : LES SOUPIRS DES OCEANS</h3>
+                <h4>Troisième partie</h4>
+                <p>Les fleurs du Paradis ont fanés devant cette rage qui a enflammé le ciel étoilé. Les soupirs de la nymphe exaltée résonnent avec une forte intensité, Titania s’est cambrée et elle n’est toujours pas rassasiée.</p>
+                <p>Les yeux de Poséidon sont attristés par cet amour remplit de bestialité, il ne pourra que regarder Néron enfourché cette belle sirène déchaînée. Titânia a mouillé les draps de son essence charnel tout émoustillé, elle murmure à son étalon contenant une rage non quantifiée « Je peux tenir jusqu’à l’aube, prends moi comme si c’était la dernière fois ». Les yeux amoureux de Néron se remplissaient d’une puissante dévotion, sa main gauche lui agrippa ses beaux cheveux longs avec passion, l’autre main écarta légèrement l’antre de Titania en ébullition. L’odeur de cette déesse enivrait la pièce, Néron la harponna avec beaucoup d’adresse, Titania succomba, elle glissa entre ses jambes de princesse une main pleine de tendresse pour calmer la lance de ce géant qu’il la pénétrait sans cesse.</p>
+                <p>Les âmes des dieux sont en éveil, le corps de ces deux esprits les émerveille, les soupirs sont devenus des cris dans cet océan couleur vermeil. Titânia rougit, elle est collée au lit, une goutte d’un plaisir insoumis coule dans la gorge de ses seins en parfaite harmonie. Elle se retourna dans un léger frisson, elle prit le grand et fort membre de Néron entre ses mamelons  pour essuyer ce liquide plein de passion. Après ce doux moment de délectation, elle souffla à son champion « Je veux que tu rentres en moi fortement, intensément et je veux que mes cris atteignent le firmament ». Héron agrippa fermement Titania avec prestance, il lui prit les hanches avec insistance, le gouffre chaleureux de cette douce en transe s’ouvrit, elle était prête pour cette dernière danse.</p>
+                <p>Le cœur de Cupidon est mutilé, ses larmes ont coulé devant cette fougue immaculée.  La revancharde Titania inséra ses ongles longs dans la peau de Néron, elle jouissait, tous ses sens étaient à l’abandon. Il lui caressa son beau visage transpirant de plaisir, la nuit avait fini de s’obscurcir, maintenant il voulait en finir dans un funeste soupir.  Il souleva les deux jambes de la déesse derrière sa brune chevelure, il glissa son harpon bien dur vers son petit orifice obscur. Il l’enfourcha sans hésiter, le corps de Titania se crispa après une telle embardée, elle lui chuchota « Continu, ne t’arrête pas je veux que mon corps ait un souvenir de cette nuit aux mille plaisirs ».</p>
+                <p>Les dieux entendirent ces derniers soupirs, l’aube apparue après cette nuit de désir, et les deux corps nus de ces deux esprits enlacés, fatigués étaient remplit de souvenirs qu’ils ne pouvaient oublier.</p>
+                <p><strong>THE END</strong></p>
+            </div>
+            
         </div>
     </section>
 
@@ -110,52 +175,52 @@
     {
         lat: 42.0935,
         lng: 11.7921,
-        popup: "Civitavecchia, Italie"
+        popup: "Civitavecchia, Italie. Mon aventure avec le limoncello m'a couté 30 jours d'arrêt."
     },
     {
         lat: 43.5485,
         lng: 10.3106,
-        popup: "Livourne, Italie"
+        popup: "Livourne, Italie. Le Blues boite à stripteade a siphonné tout mon argent."
     },
     {
         lat: 44.4056,
         lng: 8.9463,
-        popup: "Gênes, Italie"
+        popup: "Gênes, Italie. Les anti-pasti m'ont fait tourner la tête."
     },
     {
         lat: 40.4644,
         lng: 17.2470,
-        popup: "Tarente, Italie"
+        popup: "Tarente, Italie. Un peu triste à raconter, le Cherbourg de l'Italie."
     },
     {
         lat: 37.5079,
         lng: 15.0830,
-        popup: "Catane, Italie"
+        popup: "Catane, Italie Sicile. Fête jusqu'au bout de la nuit avec ses créatures obscures."
     },
     {
         lat: 37.2313,
         lng: 15.2140,
-        popup: "Augusta, Italie"
+        popup: "Augusta, Italie Sicile. Fête jusqu'au bout de la nuit avec ses créatures obscures."
     },
     {
         lat: 37.0755,
         lng: 15.2866,
-        popup: "Syracuse, Italie"
+        popup: "Syracuse, Italie. Inoublable avec des princesses italienne d'une rare beauté."
     },
     {
         lat: 35.9375,
         lng: 14.3754,
-        popup: "Malte"
+        popup: "Malte. Bar, boite et club à striptease à St Julian. Un paradis sur Terre. Taxi planning est un code."
     },
     {
         lat: 36.5271,
         lng: -6.2886,
-        popup: "Cadix, Espagne"
+        popup: "Cadix, Espagne. Casa De Citas, gouffre abyssale de mon argent."
     },
     {
         lat: 39.2238,
         lng: 9.1217,
-        popup: "Cagliari, Italie"
+        popup: "Cagliari, Italie. Ma faim m'a forcé a mangé des os de poulet. Les demoiselles sont magnifiques."
     },
     {
         lat: 37.0391,
@@ -268,8 +333,8 @@
         popup: "Goa, Inde"
     },
     {
-        lat: 4.6796,
-        lng: 55.4920,
+        lat: -4.6166,
+        lng: 55.4666,
         popup: "Seychelles"
     },
     {
@@ -396,6 +461,24 @@
             L.marker([location.lat, location.lng]).addTo(map)
                 .bindPopup(location.popup);
         });
+
+        // Tabs functionality
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Show the first tab by default
+        document.getElementById("letter1").style.display = "block";
     </script>
 </body>
 </html>
