@@ -262,3 +262,42 @@ footer .social-links a:hover {
 .contact-form button:hover {
     background-color: #005f5f;
 }
+
+/* Styles pour les onglets */
+.tab-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.tab-link {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.tab-link:hover {
+    background-color: #ddd;
+}
+
+.tab-link.active {
+    background-color: #007acc;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
