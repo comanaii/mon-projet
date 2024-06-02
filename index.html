@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Comanaï</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <div class="bubble-container">
+        <div class="bubble circle"></div>
+        <div class="bubble triangle"></div>
+        <div class="bubble star"></div>
+        <!-- More bubbles as needed -->
+    </div>
+    <header>
+        <div class="title-container">
+            <h1>Le Comanaï</h1>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#story"><img src="ressources/images/Bateaux pirate.png" alt="Bateaux pirate" title="Mon Histoire" loading="lazy"></a></li>
+                <li><a href="#travels"><img src="ressources/images/mer.png" alt="Mer"title="Mes Voyages" loading="lazy"></a></li>
+                <li><a href="#letters"><img src="ressources/images/lettres.png" title="Les lettres du Comanaï"alt="Lettres" loading="lazy"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="story">
+        <h2>Mon Histoire</h2>
+        <div class="content-container">
+            <p><strong>Garde à vous !!!</strong> Jeunes lecteurs et lectrices, je poserai sur ces éphémères morceaux de papiers mon histoire, mes rêves et mes pensées. À travers de longues traversées sur des mers déchaînées, je vais vous raconter des faits marquants et palpitants qui ont bercé ma vie de marin engagé sur des vastes océans.</p>
+            <p>En outre, ces bribes de mon esprit seront un peu romancées mais relateront une certaine vérité. Pour cela, j’apposerai tout au long de cet ouvrage des poèmes de mes escapades, mes galères avec l’autorité, les endroits peu recommandables où j’ai vadrouillé, et des lieux inoubliables qui resteront à jamais gravés dans mon âme. En revanche, les noms que je pourrai utiliser seront factices pour ne pas corrompre mon éthique et mon honneur.</p>
+            <p>Qui suis-je me direz-vous ? Bonne question. Je ne pourrai pas vous répondre avec précision mais je me consacrerai à vous guider dans mon passé pour vous l’expliquer.</p>
+            <p>En y réfléchissant, j’ai toujours eu cette envie de voir par-delà le voile de l’horizon, chercher à découvrir, explorer des territoires étrangers ainsi que des diverses civilisations.</p>
+            <p>Je me suis engagé le 27 février 2008 pour être précis. Simple matelot, j’ai étudié au Centre d’instruction Navale de Saint Mandrier qui est devenu, à présent, le Pôle Ecole Méditerranée. J’ai peut-être omis de le signaler, mais la grande spécialité de cette institution est de changer les noms auxquels on s’est habitué. Bref, mon parcours d’écolier s'arrête en octobre 2008 avec la malheureuse moyenne de 13.</p>
+            <p>Ma première affection était le vétuste Aviso Commandant Ducuing pour une durée de trois années. Je vous la raconterai plus tard en détail, mais sachez tout de même que mon mal de mer a duré une année de souffrance et ma santé sans cesse en décroissance.</p>
+            <p>Je change d’affection en août 2011 pour le fier vaisseau de type Lafayette Aconit. Je dois l’avouer, mon âme s’est perdue, je fus égaré dans la folie, le surnom de « Comanaï » naquit. Ce titre que divers marins m’avaient assigné était un honneur extrêmement flatteur. Aujourd’hui encore, sans être condescendant, il est synonyme de grandeur. Ce fut une courte période de deux années, riche en conneries, en beuverie mais surtout en franche camaraderie.</p>
+            <p>Malgré un avenir incertain dans la Marine Nationale, je mis les pieds sur le robuste BPC (Bâtiment de projection et de commandement) Mistral, et comme dit précédemment on l’appelle maintenant PHA (Porte Hélicoptères Amphibie) Mistral. Par ailleurs, ne vous inquiétez pas pour les trigrammes, je me charge de leurs significations, et ce n’est pas une sinécure je peux vous l’assurer avec conviction. Sans m’étendre, ce bâtiment de large acabit tout en acier avait réuni la meilleure équipe de mon épopée.</p>
+            <p>Je l’ai quitté en septembre 2016 pour la terrifiante frégate antiaérienne Jean Bart. Dès lors, j’ai troqué mon logement sur les bâtiments qui avaient duré huit années pour un habitat, disons-le, plus agréable et confortable. J’étais Second Maître puisque je m’étais relativement calmé sur le bateau précédent, mais il faut constater que sur celui-là, j’ai bien vrillé.</p>
+            <p>Après tant de prises de tête, en septembre 2019, je voguai sur le PHA Dixmude dont je connaissais déjà les us et coutumes. En 2021, cela finalisa mon expérience pour poursuivre ma carrière au PEM Saint Mandrier en tant que BS (Brevet Supérieur). On m’a élu Pistard (Chef de groupe des BS). En fait, c’est une plaisanterie, on m’a désigné volontaire, mais j’en garde tout de même, avec du recul, un bon souvenir. Tant de temps passé à la mine (Bar des Officiers Mariniers), j’avais réussi, sans trop de difficulté, mon BS.</p>
+            <p>Mon destin me poussa à accepter le vieux et léger PHM (Patrouilleur de Haute Mer → Nouveau nom de l’Aviso) CDT Bouan, où l’état-major m’a excédé par son manque de confiance et de respect. J’ai dû malgré moi l’abandonner, j’ai fait un court passage au bureau des stages au PEM puis, rebelote, je suis retourné sur le PHA Mistral le 10 avril 2023. Comme à mon habitude, de nombreux rebondissements sont survenus, donc je me confie, puisque selon moi, mon voyage s’arrête ici.</p>
+            <p>Ce mémorial est pour moi une façon de me libérer, je vous donne ainsi l’opportunité de découvrir mon métier, mes valeurs, mes secrets, en somme l’essence même de ce que j’étais, suis et serai.</p>
+            <p>Bien sûr, cela n’est que ma vérité et ma vision des choses, mais elles regroupent en son âme et conscience un bon nombre de corsaires des mers détenant une éternelle expérience.</p>
+        </div>
+    </section>
+
+    <section id="travels">
+        <h2>Mes voyages et mes galères</h2>
+        <div class="content-container">
+            <!-- Content of this section goes here -->
+            <div id="map-container"></div>
+        </div>
+    </section>
+
+    <section id="letters">
+        <h2>Les lettres du Comanaï</h2>
+        <div class="content-container">
+            <h3>Lettre 1 : Les Pirates de l'ombre</h3>
+            <h4>Première partie : Les femmes pirates</h4>
+            <p>Le temps d’un poème, je vais vous conter l’histoire de ces femmes aux milles blasphèmes, c’est dans l’obscurité qu’elles sommeillent sans sourciller, après ces quelques mots vous verrez en elles un doux plaisir charnel et les dieux eux-mêmes auront l’envie de descendre du ciel.</p>
+            <p>Dans les abysses de cette pièce aux divers ennuis, je vis ces jeunes sirènes qui dégageaient en elles de légers soucis. Je suis rempli de confusion, mais je vais vous faire quand même leurs présentations. L’une de ces pirates est une guerrière avec un étrange caractère, elle adore s’agripper aux cordes dénouées et rentrer dans des plaques en fer forgées. Elle adore traiter ses aînés de vieille branche desséchée mais en réalité c’est une jeune femme aux courbures éreintées.</p>
+            <p>Ce n’est que le commencement parce que voici la deuxième pirate aux cheveux ballants, ne vous méprenez pas sa tête d’ange cache de cruels mots cinglants. Ce caractère vulgaire est sûrement dû à ses relations avec des hobbies barbus d’une autre terre. Elle regarde les gens de haut, car pour elle, à ses yeux, nul n’est beau.</p>
+            <p>Je ne m’attarde pas car dans un court fracas et sous les grondements du tonnerre voici la pirate aux yeux revolver. Toujours rigolote et pleine d’énergie sa vie tourne autour des chats tout mimi, mais ne l’énervez surtout pas car ses répliques vous laisseront sans voix. Dès fois toute flagada et un peu triste parfois, son cœur bat pour quelqu’un qui ne la comprend pas, mais peut-être qu’un jour il verra qu’avec cette blonde petite pirate on ne s’ennuie pas.</p>
+            <p>L’histoire continue, la pirate au caractère changeant se met à nu. Je l’ai vue se transformer, en un instant la calme et paisible pirate met rentré dedans, ce fut un dur souvenir mais la prochaine fois je penserai à ne pas rire. Triste et voulant s’amuser elle pourrait vous laisser pour un simple carré de chocolat caramélisé.</p>
+            <p>La suivante et la dernière à de folles histoires à vous faire tomber à terre, et son caractère joyeux fait beaucoup d’envieux. La confiance de cette pirate a été perdue, maintenant elle vit autour de mille animaux qui lui ont rendu. Mais prenez garde, sa tendance à chanter est une vraie plaie pour l’humanité.</p>
+            <p>Ce chapitre n’est qu’une courte description, mais sur ce vaste océan dans l’abandon, j’aurai encore le temps d’écrire des mots sans réfléchir et mes pensées ne cesseront d’être troublées par ces pirates de l’obscurité.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="content-container">
+            <form action="contact.php" method="post" class="contact-form">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map-container').setView([51.505, -0.09], 2);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Define locations
+        var locations = [
+    {
+        lat: 42.0935,
+        lng: 11.7921,
+        popup: "Civitavecchia, Italie"
+    },
+    {
+        lat: 43.5485,
+        lng: 10.3106,
+        popup: "Livourne, Italie"
+    },
+    {
+        lat: 44.4056,
+        lng: 8.9463,
+        popup: "Gênes, Italie"
+    },
+    {
+        lat: 40.4644,
+        lng: 17.2470,
+        popup: "Tarente, Italie"
+    },
+    {
+        lat: 37.5079,
+        lng: 15.0830,
+        popup: "Catane, Italie"
+    },
+    {
+        lat: 37.2313,
+        lng: 15.2140,
+        popup: "Augusta, Italie"
+    },
+    {
+        lat: 37.0755,
+        lng: 15.2866,
+        popup: "Syracuse, Italie"
+    },
+    {
+        lat: 35.9375,
+        lng: 14.3754,
+        popup: "Malte"
+    },
+    {
+        lat: 36.5271,
+        lng: -6.2886,
+        popup: "Cadix, Espagne"
+    },
+    {
+        lat: 39.2238,
+        lng: 9.1217,
+        popup: "Cagliari, Italie"
+    },
+    {
+        lat: 37.0391,
+        lng: 22.1142,
+        popup: "Kalamata, Grèce"
+    },
+    {
+        lat: 35.4961,
+        lng: 24.0155,
+        popup: "La Sude (Souda), Crète"
+    },
+    {
+        lat: 33.8938,
+        lng: 35.5018,
+        popup: "Beyrouth, Liban"
+    },
+    {
+        lat: 34.9115,
+        lng: 33.6320,
+        popup: "Larnaca, Chypre"
+    },
+    {
+        lat: 40.1553,
+        lng: 26.4142,
+        popup: "Çanakkale, Turquie"
+    },
+    {
+        lat: 33.5731,
+        lng: -7.5898,
+        popup: "Casablanca, Maroc"
+    },
+    {
+        lat: 36.8065,
+        lng: 10.1815,
+        popup: "Tunis, Tunisie"
+    },
+    {
+        lat: 31.2001,
+        lng: 29.9187,
+        popup: "Alexandrie, Égypte"
+    },
+    {
+        lat: 11.8251,
+        lng: 42.5903,
+        popup: "Djibouti, Djibouti"
+    },
+    {
+        lat: 21.4858,
+        lng: 39.1925,
+        popup: "Djeddah, Arabie Saoudite"
+    },
+    {
+        lat: 16.8892,
+        lng: 42.5510,
+        popup: "Jizan, Arabie Saoudite"
+    },
+    {
+        lat: 29.3759,
+        lng: 47.9774,
+        popup: "Koweït, Koweït"
+    },
+    {
+        lat: 30.0362,
+        lng: 47.9195,
+        popup: "Umm Qasr, Irak"
+    },
+    {
+        lat: 25.2760,
+        lng: 51.2285,
+        popup: "Doha, Qatar"
+    },
+    {
+        lat: 24.4539,
+        lng: 54.3773,
+        popup: "Abu Dhabi, Émirats Arabes Unis"
+    },
+    {
+        lat: 25.2769,
+        lng: 55.2962,
+        popup: "Dubaï, Émirats Arabes Unis"
+    },
+    {
+        lat: 25.1280,
+        lng: 56.3265,
+        popup: "Fujairah, Émirats Arabes Unis"
+    },
+    {
+        lat: 23.5880,
+        lng: 58.3829,
+        popup: "Mascate, Oman"
+    },
+    {
+        lat: 17.0194,
+        lng: 54.0897,
+        popup: "Salalah, Oman"
+    },
+    {
+        lat: -6.8234,
+        lng: 39.2695,
+        popup: "Dar es Salaam, Tanzanie"
+    },
+    {
+        lat: -4.0546,
+        lng: 39.6635,
+        popup: "Mombasa, Kenya"
+    },
+    {
+        lat: 15.2993,
+        lng: 74.1240,
+        popup: "Goa, Inde"
+    },
+    {
+        lat: 4.6796,
+        lng: 55.4920,
+        popup: "Seychelles"
+    },
+    {
+        lat: 41.3851,
+        lng: 2.1734,
+        popup: "Barcelone, Espagne"
+    },
+    {
+        lat: 39.4699,
+        lng: -0.3763,
+        popup: "Valence, Espagne"
+    },
+    {
+        lat: 46.7790,
+        lng: -56.1774,
+        popup: "Saint-Pierre-et-Miquelon, France"
+    },
+    {
+        lat: 37.7412,
+        lng: -25.6756,
+        popup: "Les Açores, Portugal"
+    },
+    {
+        lat: 18.0735,
+        lng: -15.9582,
+        popup: "Nouakchott, Mauritanie"
+    },
+    {
+        lat: 14.7167,
+        lng: -17.4677,
+        popup: "Dakar, Sénégal"
+    },
+    {
+        lat: 5.3599,
+        lng: -4.0083,
+        popup: "Abidjan, Côte d'Ivoire"
+    },
+    {
+        lat: 16.8910,
+        lng: -24.9868,
+        popup: "Mindelo, Cap-Vert"
+    },
+    {
+        lat: 4.7556,
+        lng: -6.6398,
+        popup: "San Pedro, Côte d'Ivoire"
+    },
+    {
+        lat: -15.9650,
+        lng: -5.7089,
+        popup: "Sainte-Hélène"
+    },
+    {
+        lat: -4.7800,
+        lng: 11.8635,
+        popup: "Pointe-Noire, République du Congo"
+    },
+    {
+        lat: 0.4162,
+        lng: 9.4673,
+        popup: "Libreville, Gabon"
+    },
+    {
+        lat: -0.7193,
+        lng: 8.7815,
+        popup: "Port-Gentil, Gabon"
+    },
+    {
+        lat: 6.3703,
+        lng: 2.3912,
+        popup: "Cotonou, Bénin"
+    },
+    {
+        lat: 6.1725,
+        lng: 1.2314,
+        popup: "Lomé, Togo"
+    },
+    {
+        lat: -22.9068,
+        lng: -43.1729,
+        popup: "Rio de Janeiro, Brésil"
+    },
+    {
+        lat: 44.6488,
+        lng: -63.5752,
+        popup: "Halifax, Canada"
+    },
+    {
+        lat: 46.8139,
+        lng: -71.2082,
+        popup: "Québec, Canada"
+    },
+    {
+        lat: 36.8508,
+        lng: -76.2859,
+        popup: "Norfolk, États-Unis"
+    },
+    {
+        lat: 16.2650,
+        lng: -61.5500,
+        popup: "Guadeloupe, France"
+    },
+    {
+        lat: 14.6415,
+        lng: -61.0242,
+        popup: "Martinique, France"
+    },
+    {
+        lat: 38.7223,
+        lng: -9.1393,
+        popup: "Lisbonne, Portugal"
+    },
+    {
+        lat: 41.1579,
+        lng: -8.6291,
+        popup: "Porto, Portugal"
+    }
+];
+
+
+
+        // Add markers to the map
+        locations.forEach(function(location) {
+            L.marker([location.lat, location.lng]).addTo(map)
+                .bindPopup(location.popup);
+        });
+    </script>
+</body>
+</html>
