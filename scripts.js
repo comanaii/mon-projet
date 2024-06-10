@@ -1,17 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Toggle button functionality
-    const toggleButtons = document.querySelectorAll(".toggle-button");
-    toggleButtons.forEach(button => {
-        button.addEventListener("click", (event) => {
-            const parentSection = event.target.closest(".story-section");
-            const storyText = parentSection.querySelector(".story-text");
-            const isVisible = storyText.style.display === "block";
-            storyText.style.display = isVisible ? "none" : "block";
-            event.target.textContent = isVisible ? "Lire la suite" : "Réduire";
-        });
-    });
+    // Fonctionnalité pour révéler les sections de l'histoire au défilement
+    const storySections = document.querySelectorAll(".story-section");
 
-    // Tab functionality
+    const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        storySections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            if (sectionTop < windowHeight - 100) {
+                section.classList.add("visible");
+            }
+        });
+    };
+
+    // Ajouter un écouteur d'événement pour le défilement
+    window.addEventListener("scroll", revealOnScroll);
+
+    // Révéler les sections qui sont déjà visibles lors du chargement de la page
+    revealOnScroll();
+
+    // Fonctionnalité des onglets
     const tabLinks = document.querySelectorAll(".tab-link");
     const tabContents = document.querySelectorAll(".tab-content");
 
@@ -27,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Leaflet map initialization
+    // Initialisation de la carte Leaflet
     const mapContainer = document.getElementById("map-container");
     if (mapContainer) {
         const map = L.map(mapContainer).setView([51.505, -0.09], 13);
@@ -36,4 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
     }
+
+    // Menu toggle functionality
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    if (menuToggle) {
+        menuToggle.addEventListener("click", () => {
+            menu.classList.toggle("active");
+        });
+    }
 });
+
