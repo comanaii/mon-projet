@@ -359,24 +359,28 @@
             <img src="ressources/images/image18.png" alt="Description de l'image 18" title = "Un arbre pas commun dans la forêt de Banco">
             <img src="ressources/images/image19.png" alt="Description de l'image 19" title = "Une bouteille un peu corsé au Maximum à Abidjan(Le Toi et Moi)">
             <img src="ressources/images/image20.png" alt="Description de l'image 20" title = "Bon petit poulet Yassa à la Cabane du pêcheur à Dakar">
-            <img src="ressources/images/image21.png" alt="Description de l'image 21" title = "">
             <!-- Contenu pour la galerie -->
         </div>
     </section>
     
     
     <!-- Section Commentaires -->
-<section id="comments">
-    <h2>Commentaires</h2>
-    <div class="comments-container" id="commentsContainer">
-        <!-- Les commentaires seront ajoutés ici dynamiquement -->
-    </div>
-    <div class="comment-form">
-        <input type="text" id="commentAuthor" placeholder="Votre nom">
-        <textarea id="commentText" placeholder="Votre commentaire"></textarea>
-        <button onclick="addComment()">Ajouter le commentaire</button>
-    </div>
-</section>
+    <section id="comments">
+        <h2>Commentaires</h2>
+        <div class="comments-container">
+            <div class="comment">
+                <h4>Nom du Commentateur</h4>
+                <p>Contenu du commentaire...</p>
+                <time datetime="2023-06-09">9 Juin 2023</time>
+                <button>Supprimer</button>
+            </div>
+            <form class="comment-form">
+                <input type="text" placeholder="Votre nom">
+                <textarea placeholder="Votre commentaire"></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
 
 
 <script>
