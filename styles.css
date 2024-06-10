@@ -18,7 +18,6 @@ header {
     100% { background-position: 0% 50%; }
 }
 
-
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
@@ -28,26 +27,6 @@ body {
     background: linear-gradient(120deg, #d3cce3, #e9e4f0);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
-    
-}
-
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-
-header {
-    background-color: rgba(0, 140, 186, 0.8);
-    padding: 1em;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .title-container h1 {
@@ -191,7 +170,6 @@ section {
     background-color: #575757;
 }
 
-
 /* BULLES Styles */
 .bubble {
     position: absolute;
@@ -291,14 +269,15 @@ section {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+
 .story-container {
     width: 90%;
-    max-width: 800px; /* Limite la largeur maximale */
-    margin: 50px auto; /* Centré horizontalement */
+    max-width: 800px;
+    margin: 50px auto;
     padding: 20px;
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .story-title {
@@ -325,7 +304,7 @@ section {
 .story-section:hover {
     transform: translateY(-5px);
     background-color: #dfe6e9;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .story-subtitle {
@@ -336,9 +315,9 @@ section {
 .story-text {
     font-size: 1em;
     line-height: 1.6;
-    max-width: 700px; /* Limite la largeur du texte */
-    margin: 0 auto; /* Centre le texte */
-    display: none; /* Masqué par défaut */
+    max-width: 700px;
+    margin: 0 auto;
+    display: none;
 }
 
 .toggle-button {
@@ -356,11 +335,6 @@ section {
 
 .toggle-button:hover {
     background-color: #0056b3;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 h2 {
@@ -510,15 +484,15 @@ footer .social-links a:hover {
 }
 
 .content-box {
-    background-color: #f9f9f9; /* Background color for the content box */
-    border: 1px solid #ddd; /* Border color */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Padding inside the box */
-    margin-bottom: 20px; /* Space below the content box */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Smooth transition for hover effect */
-    position: relative; /* Position relative for pseudo-element */
-    overflow: hidden; /* Hide overflow for pseudo-element animation */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
 .content-box::before {
@@ -537,155 +511,160 @@ footer .social-links a:hover {
 }
 
 .content-box:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
-    background-color: #fff; /* Lighter background color on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
 }
 
 .content-box h3 {
-    font-size: 24px; /* Font size for the heading */
-    color: #333; /* Heading color */
-    margin-bottom: 15px; /* Space below the heading */
-    font-weight: bold; /* Bold font */
-    text-align: center; /* Centered heading */
-    transition: color 0.3s; /* Smooth color transition */
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.3s;
 }
 
 .content-box p {
-    font-size: 16px; /* Font size for the paragraphs */
-    line-height: 1.6; /* Line height for better readability */
-    color: #555; /* Paragraph text color */
-    margin-bottom: 15px; /* Space below each paragraph */
-    transition: color 0.3s; /* Smooth color transition */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+    transition: color 0.3s;
 }
 
 .content-box:hover h3, 
 .content-box:hover p {
-    color: #000; /* Darker text color on hover */
+    color: #000;
 }
-
 
 /* Media queries for responsive design */
 @media (max-width: 1024px) {
     header {
-        padding: 0.8em; /* Reduce padding for smaller screens */
+        padding: 0.8em;
     }
 
     .title-container h1 {
-        font-size: 1.8em; /* Adjust font size for medium screens */
+        font-size: 1.8em;
     }
 
     nav .menu li a {
-        font-size: 0.95em; /* Adjust font size for medium screens */
+        font-size: 0.95em;
     }
 
     .content-container {
-        margin: 1.5em; /* Adjust margin for medium screens */
-        padding: 1.5em; /* Adjust padding for medium screens */
+        margin: 1.5em;
+        padding: 1.5em;
     }
 
     h2 {
-        font-size: 1.75em; /* Adjust font size for medium screens */
+        font-size: 1.75em;
     }
 
     h3 {
-        font-size: 1.4em; /* Adjust font size for medium screens */
+        font-size: 1.4em;
     }
 
     h4 {
-        font-size: 1.1em; /* Adjust font size for medium screens */
+        font-size: 1.1em;
     }
 }
 
 @media (max-width: 768px) {
     nav .menu {
         flex-direction: column;
+        display: none;
+    }
+
+    nav .menu.active {
+        display: flex;
     }
 
     .menu-toggle {
         display: block;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        text-align: center;
     }
 
     header {
-        padding: 0.5em; /* Reduce padding for smaller screens */
+        padding: 0.5em;
     }
 
     .title-container h1 {
-        font-size: 1.5em; /* Reduce font size for smaller screens */
+        font-size: 1.5em;
     }
-    .tab-container {
-        flex-direction: column;
-        align-items: center;
-    }
+    
     nav .menu li a {
-        font-size: 0.9em; /* Reduce font size for smaller screens */
+        font-size: 0.9em;
     }
 
     .content-container {
-        margin: 1em; /* Adjust margin for smaller screens */
-        padding: 1em; /* Adjust padding for smaller screens */
+        margin: 1em;
+        padding: 1em;
     }
 
     h2 {
-        font-size: 1.5em; /* Adjust font size for smaller screens */
+        font-size: 1.5em;
     }
 
     h3 {
-        font-size: 1.2em; /* Adjust font size for smaller screens */
+        font-size: 1.2em;
     }
 
     h4 {
-        font-size: 1em; /* Adjust font size for smaller screens */
+        font-size: 1em;
     }
     .content-box {
-        padding: 15px; /* Reduce padding on smaller screens */
+        padding: 15px;
     }
 
     .content-box h3 {
-        font-size: 20px; /* Smaller heading font size on smaller screens */
+        font-size: 20px;
     }
 
     .content-box p {
-        font-size: 14px; /* Smaller paragraph font size on smaller screens */
+        font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
     header {
-        padding: 0.3em; /* Further reduce padding for very small screens */
+        padding: 0.3em;
     }
 
     .title-container h1 {
-        font-size: 1.2em; /* Further reduce font size for very small screens */
+        font-size: 1.2em;
     }
 
     nav .menu li {
-        margin: 0.5em 0; /* Stack menu items vertically with margin */
+        margin: 0.5em 0;
     }
 
     nav .menu li a {
-        font-size: 0.8em; /* Further reduce font size for very small screens */
+        font-size: 0.8em;
     }
 
     .content-container {
-        margin: 0.5em; /* Further adjust margin for very small screens */
-        padding: 0.5em; /* Further adjust padding for very small screens */
+        margin: 0.5em;
+        padding: 0.5em;
     }
 
     h2 {
-        font-size: 1.2em; /* Further adjust font size for very small screens */
+        font-size: 1.2em;
     }
 
     h3 {
-        font-size: 1em; /* Further adjust font size for very small screens */
+        font-size: 1em;
     }
 
     h4 {
-        font-size: 0.9em; /* Further adjust font size for very small screens */
+        font-size: 0.9em;
     }
 
     footer {
-        padding: 0.5em; /* Adjust footer padding for very small screens */
+        padding: 0.5em;
     }
 }
-
