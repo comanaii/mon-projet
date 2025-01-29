@@ -28,11 +28,125 @@ body {
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
 }
+.books-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.book-item {
+    background: linear-gradient(135deg, #74b9ff, #55efc4);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+}
+
+.book-item a {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.book-item p {
+    font-size: 0.9em;
+    color: white;
+    margin-top: 10px;
+}
+
+/* Animation au survol */
+.book-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ff7675, #fdcb6e);
+}
 
 .title-container h1 {
     margin: 0;
     color: white;
 }
+.carousel-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* Ajuste la hauteur max */
+    object-fit: contain; /* Évite le zoom */
+    border-radius: 10px;
+}
+
+/* Assure que les boutons sont bien cliquables */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Assure que le bouton est au-dessus des images */
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#prevBtn {
+    left: 15px;
+}
+
+#nextBtn {
+    right: 15px;
+}
+
+
+
+
+
+
+
 
 /* Menu Styles */
 .menu {
@@ -66,27 +180,6 @@ section {
     border-bottom: 1px solid #ddd;
 }
 
-/* Galerie Styles */
-.gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 50px auto;
-    gap: 20px;
-    justify-content: center;
-}
-
-.gallery-container img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.gallery-container img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
 /* Commentaires Styles */
 .comments-container {
