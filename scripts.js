@@ -84,62 +84,73 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function nextSlide() {
-        index = (index < totalSlides - 1) ? index + 1 : 0;
+        index = (index + 1) % totalSlides;
         updateCarousel();
     }
 
     function prevSlide() {
-        index = (index > 0) ? index - 1 : totalSlides - 1;
+        index = (index - 1 + totalSlides) % totalSlides;
         updateCarousel();
     }
 
     function startAutoSlide() {
-        autoSlide = setInterval(nextSlide, 3000); // Change toutes les 3 secondes
+        clearInterval(autoSlide);
+        autoSlide = setInterval(nextSlide, 3000);
     }
 
     function stopAutoSlide() {
         clearInterval(autoSlide);
     }
 
-    // Navigation boutons
     prevBtn.addEventListener("click", () => {
         prevSlide();
-        stopAutoSlide();
         startAutoSlide();
     });
 
     nextBtn.addEventListener("click", () => {
         nextSlide();
-        stopAutoSlide();
         startAutoSlide();
     });
 
-    // Pause quand on survole l’image
-    carousel.addEventListener("mouseenter", stopAutoSlide);
-    carousel.addEventListener("mouseleave", startAutoSlide);
+    // Pause survol (uniquement desktop)
+    if (window.innerWidth > 768) {
+        carousel.addEventListener("mouseenter", stopAutoSlide);
+        carousel.addEventListener("mouseleave", startAutoSlide);
+    }
 
-    // Swipe mobile (touch)
+    // Swipe mobile amélioré
     let startX = 0;
-    let endX = 0;
+    let isSwiping = false;
 
     carousel.addEventListener("touchstart", (e) => {
         startX = e.touches[0].clientX;
+        isSwiping = true;
     });
 
-    carousel.addEventListener("touchend", (e) => {
-        endX = e.changedTouches[0].clientX;
-        if (startX > endX + 50) {
-            nextSlide(); // Swipe gauche → suivant
-        } else if (startX < endX - 50) {
-            prevSlide(); // Swipe droite → précédent
+    carousel.addEventListener("touchmove", (e) => {
+        if (!isSwiping) return;
+        let moveX = e.touches[0].clientX;
+        let diff = startX - moveX;
+
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+            isSwiping = false;
         }
-        stopAutoSlide();
+    });
+
+    carousel.addEventListener("touchend", () => {
+        isSwiping = false;
         startAutoSlide();
     });
 
     updateCarousel();
-    startAutoSlide(); // Lancer l’auto-défilement au chargement
+    startAutoSlide();
 });
+
 
 
 
