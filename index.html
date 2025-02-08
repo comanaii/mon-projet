@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
+    <div class="wave-container">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    
+
     <div class="bubble-container">
         <div class="bubble circle"></div>
         <div class="bubble triangle"></div>
@@ -24,11 +31,68 @@
                 <li><a href="#travels">Mes Voyages</a></li>
                 <li><a href="#letters">Les Lettres du Comanaï</a></li>
                 <li><a href="#gallery">Galerie</a></li>
-                <li><a href="#comments">Commentaires</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
+
+    <section id="book-summary-1">
+        <h2>Résumé du Livre 1</h2>
+        <p>
+            Ce sont mes mémoires du début de ma marine. J'étais encore à l'âge de l'innocence et je raconte comment le nom du Comanaï naquit.
+            Ma vision, mon esprit sur le monde ont subi une grande transformation, et je l'ai vu plutôt comme un cadeau des dieux. 
+        </p>
+        <p>
+            Dès mes premiers pas sur le pont de mon premier navire, l'ombre de Poséidon me suivait, et je sentais son regard sonder mon âme. 
+            Mes doutes étaient nombreux, comme ceux d'Ulysse face aux caprices des flots, mais les vieux sages que j'ai croisés étaient tels des oracles, 
+            guidant mes pas avec la sagesse d'Athéna. 
+        </p>
+        <p>
+            Avec le temps, mon âme a transcendé ses peurs, et ma vision du monde s'est métamorphosée. 
+            Héphaïstos forgea mon courage, tandis que Zeus insufflait en moi la détermination du tonnerre. 
+            Chaque tempête que j'affrontais devenait une épreuve initiatique, et chaque étoile du ciel nocturne semblait être 
+            un signe des dieux, m'indiquant le chemin à suivre.
+        </p>
+    </section>
+
+    <section id="book-summary-2">
+        <h2>Résumé du Livre 2</h2>
+        <p>
+            "L'Avènement" est un voyage qui m'a fait connaître la plus belle équipe de ma marine, 
+            une fraternité forgée par les flots et les tempêtes. Ce périple m'a fait grandir l'esprit, 
+            chaque instant étant rythmé par des poèmes qui résonnaient comme des incantations aux dieux des océans.
+        </p>
+        <p>
+            Mon inspiration aux sirènes d'ébène a permis l'envoûtement de mes voyages, 
+            tel un chant mystique guidant mon âme vers des horizons insoupçonnés. 
+            Le murmure des vagues évoquait l'écho de Calypso, 
+            et chaque port d'escale était un temple sacré, où résonnaient les chants des peuples de la mer.
+        </p>
+        <p>
+            J'ai découvert l'Atlantique, royaume de Poséidon, et navigué vers l'autre bout du monde, 
+            là où les constellations semblaient tracer un chemin divin. 
+            Hélios éclairait mes jours, et Nyx veillait sur mes nuits, 
+            me rappelant que chaque voyage est une offrande aux dieux et un passage vers l'immortalité des âmes maritimes.
+        </p>
+    </section>
+    
+    <section id="book-summary-3">
+        <h2>Résumé du Livre 3</h2>
+        <p>
+            "La Fin du Chemin" est un passage entre deux époques, un sentier tortueux où la réalité du changement s'est imposée à moi. 
+            J'ai vu l'ambiance de la marine se métamorphoser, les compétences des hommes évoluer différemment, 
+            et j'ai compris que le monde des marins que j'avais tant aimé s'effondrait lentement.
+        </p>
+        <p>
+            Chaque traversée fut une leçon, chaque tempête une révélation, mais l'horizon que je contemplais n'était plus celui de mes débuts. 
+            Comme Atlas portant le poids du ciel, j'ai senti le fardeau du temps peser sur mes épaules, 
+            tandis que les vents d'Éole semblaient souffler dans une nouvelle direction, m'imposant de poser pied à terre.
+        </p>
+        <p>
+            Aujourd'hui, ma traversée est achevée, et sur la terre ferme, 
+            je grave ces souvenirs comme les récits d'Homère, témoignant de l'âge d'or d'un marin désormais en quête d'une autre odyssée.
+        </p>
+    </section>
+
 
     <section id="books">
         <h2>Mes Livres</h2>
@@ -36,28 +100,31 @@
             <div class="book-item">
                 <img src="ressources/images/Couverture_1.jpg" alt="Couverture Livre 1" class="book-cover">
                 <div class="book-info">
-                <a href="lien_du_livre_1" target="_blank">MEMOIRES D’UN CORSAIRE LE COMANAÏ PARTIE 1 – LES PREMICES</a>
-                <p>Résumé du Livre 1 - Ce sont mes mémoires du début de ma marine.
-                    J'étais encore à l'age de l'innocence et je raconte comment mon âme a changée.
-                    Ma vision, mon esprit sur le monde a subit une grande transformation, et je l'ai vu plutôt comme un cadeau.
-                </p>
+                    <a href="https://www.amazon.fr/MEMOIRES-DUN-CORSAIRE-YANN-BLOCHET-ebook/dp/B0DV5PQTSM/" target="_blank">
+                        MEMOIRES D’UN CORSAIRE LE COMANAÏ PARTIE 1 – LES PREMICES
+                    </a>
+                    <p>Livre 1 - Ce sont mes mémoires, le commencement de ma marine et la naissance de mon surnom...</p>
+                </div>
             </div>
-        </div>
+    
             <div class="book-item">
                 <img src="ressources/images/Couverture_2.jpg" alt="Couverture Livre 2" class="book-cover">
                 <div class="book-info">
-                <a href="lien_du_livre_2" target="_blank">MEMOIRES D’UN CORSAIRE LE COMANAÏ PARTIE 2 – L'AVENEMENT'</a>
-                <p>Résumé du Livre 2 - Un voyage épique à travers les mers.</p>
+                    <a class="disabled-link">MEMOIRES D’UN CORSAIRE LE COMANAÏ PARTIE 2 – L'AVENEMENT (Bientôt disponible)</a>
+                    <p>Résumé du Livre 2 - Un voyage épique à travers les mers qui a concrétisé mon avènement.</p>
+                </div>
             </div>
-            </div>
+    
             <div class="book-item">
                 <img src="ressources/images/Couverture_3.jpg" alt="Couverture Livre 3" class="book-cover">
-                <a href="lien_du_livre_3" target="_blank">MEMOIRES D’UN CORSAIRE LE COMANAÏ PARTIE 3 – LA FIN DU CHEMIN</a>
-                <p>Résumé du Livre 3 - Une quête remplie de mystères et d'aventures.</p>
-            </div>
+                <div class="book-info">
+                    <a class="disabled-link">MEMOIRES D’UN CORSAIRE LE COMANAÏ PARTIE 3 – LA FIN DU CHEMIN (Bientôt disponible)</a>
+                    <p>Résumé du Livre 3 - Une quête remplie de mystères et la fin de mes aventures. </p>
+                </div>
             </div>
         </div>
     </section>
+    
 
         <!-- Add more story sections as needed -->
     </div>
@@ -377,80 +444,22 @@
     </div>
     </section>
     
-    
-    <!-- Section Commentaires -->
-    <section id="comments">
-        <h2>Commentaires</h2>
-        <div class="comments-container">
-            <div class="comment">
-                <h4>Nom du Commentateur</h4>
-                <p>Contenu du commentaire...</p>
-                <time datetime="2023-06-09">9 Juin 2023</time>
-                <button>Supprimer</button>
-            </div>
-            <form class="comment-form">
-                <input type="text" placeholder="Votre nom">
-                <textarea placeholder="Votre commentaire"></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
+    section id="quiz">
+    <h2>Quiz des Capitales</h2>
+    <div class="quiz-container">
+        <p id="question">Chargement de la question...</p>
+        <div class="options">
+            <button class="option" data-index="0"></button>
+            <button class="option" data-index="1"></button>
+            <button class="option" data-index="2"></button>
+            <button class="option" data-index="3"></button>
         </div>
-    </section>
+        <p id="feedback"></p>
+        <button id="next-question">Question Suivante</button>
+    </div>
+</section>
 
-
-<script>
-    function addComment() {
-        const author = document.getElementById('commentAuthor').value;
-        const text = document.getElementById('commentText').value;
-
-        if (author && text) {
-            const commentContainer = document.getElementById('commentsContainer');
-
-            // Créer le nouvel élément de commentaire
-            const newComment = document.createElement('div');
-            newComment.classList.add('comment');
-
-            // Ajouter le contenu du commentaire
-            newComment.innerHTML = `
-                <h4>${author}</h4>
-                <p>${text}</p>
-                <time>${new Date().toLocaleString()}</time>
-                <button onclick="deleteComment(this)">Supprimer</button>
-            `;
-
-            // Ajouter le commentaire au conteneur
-            commentContainer.appendChild(newComment);
-
-            // Effacer les champs du formulaire
-            document.getElementById('commentAuthor').value = '';
-            document.getElementById('commentText').value = '';
-        } else {
-            alert('Veuillez entrer votre nom et votre commentaire.');
-        }
-    }
-
-    function deleteComment(button) {
-        const comment = button.parentElement;
-        comment.remove();
-    }
-</script>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <div class="content-container">
-            <form action="contact.php" method="post" class="contact-form">
-                <label for="name">Nom:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                
-                <button type="submit">Envoyer</button>
-            </form>
-        </div>
-    </section>
+<script src="quiz.js"></script>
 
     <footer>
         <div class="social-links">
@@ -480,7 +489,7 @@
     {
         lat: 43.5485,
         lng: 10.3106,
-        popup: "Livourne, Italie. Le Blues boite à striptease a siphonné tout mon argent."
+        popup: "Livourne, Italie. Le Blues boite à striptease a siphonné tout mon argent. 930 euros si ma mémoire est bonne."
     },
     {
         lat: 44.4056,
@@ -779,5 +788,7 @@
         });
 
     </script>
+
+
 </body>
 </html>
