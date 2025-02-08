@@ -1,8 +1,8 @@
 header {
-    background: linear-gradient(270deg, #ff7675, #74b9ff, #55efc4, #fdcb6e);
+    background: linear-gradient(270deg, #003366, #005f99, #007acc, #0099cc);
     background-size: 800% 800%;
     animation: gradientAnimation 10s ease infinite;
-    padding: 1em;
+    padding: 1.5em;
     text-align: center;
     position: sticky;
     top: 0;
@@ -10,6 +10,11 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 @keyframes gradientAnimation {
@@ -18,16 +23,60 @@ header {
     100% { background-position: 0% 50%; }
 }
 
+/* Style général du site */
 body {
     margin: 0;
+    padding: 0;
     font-family: 'Arial', sans-serif;
-    overflow-x: hidden;
     position: relative;
     min-height: 100vh;
-    background: linear-gradient(120deg, #d3cce3, #e9e4f0);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
+    background: linear-gradient(180deg, #007acc, #005f99, #003366);
+    overflow-x: hidden;
 }
+
+/* Conteneur pour les vagues */
+.wave-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Création des vagues */
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 40%;
+    opacity: 0.5;
+    animation: waveMove 6s infinite linear;
+}
+
+.wave:nth-child(2) {
+    top: 20px;
+    opacity: 0.4;
+    animation-duration: 8s;
+    animation-direction: reverse;
+}
+
+.wave:nth-child(3) {
+    top: 40px;
+    opacity: 0.3;
+    animation-duration: 10s;
+}
+
+/* Animation des vagues */
+@keyframes waveMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+
 .books-container {
     display: flex;
     flex-wrap: wrap;
@@ -35,16 +84,20 @@ body {
     justify-content: center;
     margin: 20px auto;
     max-width: 900px;
+    background: rgba(0, 51, 102, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .book-item {
-    background: linear-gradient(135deg, #74b9ff, #55efc4);
+    background: linear-gradient(135deg, #005f99, #007acc);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    width: 250px;
+    width: 150px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -53,8 +106,8 @@ body {
 
 .book-item:hover {
     transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(135deg, #ff7675, #fdcb6e);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, #003366, #005f5f);
 }
 
 .book-cover {
@@ -69,22 +122,114 @@ body {
 .book-info a {
     font-size: 1.2em;
     font-weight: bold;
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     display: block;
     margin-bottom: 5px;
 }
 
+
 .book-info p {
     font-size: 0.9em;
-    color: white;
+    color: #cceeff;
 }
+
+/* Style des sections de sommaires des livres */
+[id^="book-summary"] {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #002244, #004488);
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: #ffffff;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Effet de survol avec lumière douce */
+[id^="book-summary"]:hover {
+    background: linear-gradient(135deg, #003366, #0055aa);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Ajout d'un fond animé en vagues derrière les sections */
+[id^="book-summary"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('ressources/images/wave-pattern.png');
+    opacity: 0.2;
+    z-index: -1;
+    animation: moveWaves 8s infinite linear;
+}
+
+@keyframes moveWaves {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Style des titres des résumés avec animation */
+[id^="book-summary"] h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #cceeff;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+}
+
+[id^="book-summary"] h2:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Animation d'apparition des paragraphes */
+[id^="book-summary"] p {
+    display: none;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: justify;
+    color: #cceeff;
+    padding: 0 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Affichage fluide au clic */
+[id^="book-summary"].active p {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.disabled-link {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #bbbbbb;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+    cursor: not-allowed;
+}
+
 
 
 .title-container h1 {
     margin: 0;
     color: white;
 }
+
 .carousel-container {
     position: relative;
     width: 90%;
@@ -94,7 +239,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgba(0, 51, 102, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
 
 .carousel {
     display: flex;
@@ -109,21 +266,13 @@ body {
 }
 
 
-.carousel-slide img {
-    width: 100%;
-    height: auto;
-    max-height: 500px; /* Ajuste la hauteur max */
-    object-fit: contain; /* Évite le zoom */
-    border-radius: 10px;
-}
-
 /* Assure que les boutons sont bien cliquables */
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.3);
-    color: #fff;
+    color: #ffffff;
     border: none;
     padding: 15px;
     cursor: pointer;
@@ -135,16 +284,17 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10; /* Assure que le bouton est au-dessus des images */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
 }
 
 .carousel-btn:hover {
     background: rgba(255, 255, 255, 0.8);
-    color: #333;
+    color: #003366;
     transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
 }
+
 
 #prevBtn {
     left: 15px;
@@ -155,19 +305,13 @@ body {
 }
 
 
-
-
-
-
-
-
 /* Menu Styles */
 .menu {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
-    background-color: #333;
+    background-color: rgba(0, 51, 102, 0.9);
 }
 
 .menu li {
@@ -176,187 +320,21 @@ body {
 
 .menu a {
     text-decoration: none;
-    color: white;
+    color: #ffffff;
     padding: 14px 20px;
     display: block;
     transition: background-color 0.3s;
 }
 
-.menu a:hover {
-    background-color: #575757;
-}
 
+.menu a:hover {
+    background-color: #005f99;
+}
 /* Section Styles */
 section {
     padding: 40px 20px;
     background-color: #f4f4f4;
     border-bottom: 1px solid #ddd;
-}
-
-
-/* Commentaires Styles */
-.comments-container {
-    max-width: 800px;
-    margin: 0 auto 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.comment {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    position: relative;
-}
-
-.comment h4 {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
-}
-
-.comment p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #555;
-}
-
-.comment time {
-    font-size: 12px;
-    color: #999;
-}
-
-.comment button {
-    position: absolute;
-    right: 0;
-    top: 0;
-    background: none;
-    border: none;
-    color: red;
-    font-size: 12px;
-    cursor: pointer;
-}
-
-.comment-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.comment-form input,
-.comment-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.comment-form button {
-    align-self: flex-end;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.comment-form button:hover {
-    background-color: #575757;
-}
-
-/* BULLES Styles */
-.bubble {
-    position: absolute;
-    bottom: 0;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.7);
-    animation: rise 10s infinite;
-}
-
-.bubble-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.bubble.circle {
-    border-radius: 50%;
-}
-
-.bubble.triangle {
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 40px solid rgba(255, 255, 255, 0.7);
-}
-
-.bubble.star {
-    width: 0;
-    height: 0;
-    margin-left: -15px;
-    margin-top: -15px;
-    border-right: 20px solid transparent;
-    border-bottom: 15px solid rgba(255, 255, 255, 0.7);
-    border-left: 20px solid transparent;
-    transform: rotate(35deg);
-}
-
-.bubble.star:before {
-    border-bottom: 15px solid rgba(255, 255, 255, 0.7);
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    position: absolute;
-    height: 0;
-    width: 0;
-    top: -10.5px;
-    left: -13.5px;
-    display: block;
-    content: '';
-    transform: rotate(-35deg);
-}
-
-.bubble.star:after {
-    position: absolute;
-    display: block;
-    color: transparent;
-    top: 0px;
-    left: -20px;
-    width: 0px;
-    height: 0px;
-    border-right: 20px solid transparent;
-    border-bottom: 15px solid rgba(255, 255, 255, 0.7);
-    border-left: 20px solid transparent;
-    transform: rotate(-70deg);
-    content: '';
-}
-
-@keyframes rise {
-    0% {
-        bottom: 0;
-        opacity: 1;
-    }
-    100% {
-        bottom: 100%;
-        opacity: 0;
-    }
 }
 
 .content-container {
@@ -374,91 +352,6 @@ section {
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
-}
-
-.story-container {
-    width: 90%;
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.story-title {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.story-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Ajoutez ces styles à la fin de votre fichier CSS existant */
-
-/* Section Styles */
-.story-section {
-    padding: 15px;
-    background: #e9ecef;
-    border-radius: 8px;
-    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-    position: relative;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.story-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Optionally add some delay for staggered reveal effect */
-.story-section:nth-child(1) { transition-delay: 0.1s; }
-.story-section:nth-child(2) { transition-delay: 0.2s; }
-.story-section:nth-child(3) { transition-delay: 0.3s; }
-.story-section:nth-child(4) { transition-delay: 0.4s; }
-/* Ajoutez des délais supplémentaires pour les autres sections */
-
-.story-section:hover {
-    transform: translateY(-5px);
-    background-color: #dfe6e9;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.story-subtitle {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.story-text {
-    font-size: 1em;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
-    display: none;
-}
-
-.toggle-button {
-    display: block;
-    margin: 10px auto 0;
-    padding: 8px 16px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.toggle-button:hover {
-    background-color: #0056b3;
 }
 
 h2 {
@@ -491,8 +384,134 @@ p strong {
     color: #005f5f;
 }
 
+/* Style du Quiz */
+#quiz {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(0, 51, 102, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.4s ease-in-out;
+}
+
+#quiz h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #cceeff;
+    text-transform: uppercase;
+    transition: transform 0.3s;
+}
+
+#quiz h2:hover {
+    transform: scale(1.05);
+}
+
+#question {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.option {
+    width: 80%;
+    background: #005f99;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    font-size: 1em;
+    text-align: center;
+}
+
+.option:hover {
+    background: #007acc;
+    transform: scale(1.05);
+}
+
+.correct {
+    background: #28a745 !important;
+    animation: correctGlow 0.5s ease-in-out;
+}
+
+.wrong {
+    background: #dc3545 !important;
+    animation: wrongShake 0.5s ease-in-out;
+}
+
+@keyframes correctGlow {
+    0% { box-shadow: 0 0 5px #28a745; }
+    100% { box-shadow: 0 0 20px #28a745; }
+}
+
+@keyframes wrongShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+#feedback {
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+#next-question {
+    display: block;
+    margin: 20px auto;
+    padding: 12px;
+    width: 60%;
+    background: #ffa500;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    text-align: center;
+}
+
+#next-question:hover {
+    background: #ff8c00;
+    transform: scale(1.05);
+}
+
+/* Style du score final */
+#score-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(0, 51, 102, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5em;
+    transition: all 0.4s ease-in-out;
+}
+
+
+
+
 footer {
-    background-color: #005f5f;
+    background-color: #003366;
     color: white;
     text-align: center;
     padding: 1em;
@@ -500,6 +519,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
 
 footer .social-links a {
     color: white;
@@ -512,50 +532,21 @@ footer .social-links a:hover {
     color: #ffcc00;
 }
 
+@media (max-width: 768px) {
+    nav .menu {
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
 #map-container {
     width: 100%;
     height: 500px;
     margin: 20px 0;
     border-radius: 10px;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form label {
-    font-weight: bold;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.contact-form button {
-    align-self: center;
-    padding: 10px 20px;
-    background-color: #007acc;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.contact-form button:hover {
-    background-color: #005f5f;
 }
 
 /* Tab Styles */
