@@ -152,8 +152,27 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    const summaries = document.querySelectorAll('[id^="book-summary"]');
+
+    summaries.forEach(summary => {
+        summary.addEventListener("click", function() {
+            this.classList.toggle("active");
+        });
+    });
+});
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    const disabledLinks = document.querySelectorAll('.disabled-link');
+
+    disabledLinks.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault(); // Empêche l'ouverture du lien
+            alert("Ce livre n'est pas encore disponible. Restez à l'affût !");
+        });
+    });
+});
 
 
 
