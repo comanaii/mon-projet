@@ -200,6 +200,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const imgLeo = document.getElementById("leo-toggle");
+  const texteLeo = document.querySelector(".hommage-texte");
+
+  if (imgLeo && texteLeo) {
+    imgLeo.addEventListener("click", () => {
+      texteLeo.style.display = (texteLeo.style.display === "none") ? "block" : "none";
+    });
+  }
+});
 
 
 
