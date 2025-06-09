@@ -174,6 +174,31 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleLettre = document.getElementById("toggle-lettre");
+    const contenuLettre = document.querySelector(".lettre-contenu");
+
+    if (toggleLettre && contenuLettre) {
+        toggleLettre.addEventListener("click", () => {
+            const visible = contenuLettre.style.display === "block";
+            contenuLettre.style.display = visible ? "none" : "block";
+            if (!visible) {
+                lancerCoeurs(toggleLettre);
+            }
+        });
+    }
+
+    function lancerCoeurs(sourceElement) {
+        for (let i = 0; i < 12; i++) {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.style.left = `${Math.random() * 80 + 10}%`;
+            heart.style.animationDelay = `${Math.random() * 0.5}s`;
+            sourceElement.appendChild(heart);
+            setTimeout(() => heart.remove(), 1500);
+        }
+    }
+});
 
 
 
