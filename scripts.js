@@ -211,5 +211,35 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const passwordInput = document.getElementById("secret-password");
+  const validateBtn = document.getElementById("validate-password");
+  const letter = document.getElementById("secret-letter");
+  const errorMsg = document.getElementById("password-error");
+  const prompt = document.getElementById("password-prompt");
+
+  const correctPassword = "poseidon"; // 🔐 Mot de passe à personnaliser
+
+  validateBtn?.addEventListener("click", () => {
+    if (passwordInput.value.toLowerCase() === correctPassword) {
+      prompt.classList.add("fade-out");
+      setTimeout(() => {
+        prompt.style.display = "none";
+        letter.classList.add("reveal");
+      }, 600); // attendre que l'animation de disparition se termine
+      errorMsg.textContent = "";
+    } else {
+      errorMsg.textContent = "Mot de passe incorrect.";
+      letter.classList.remove("reveal");
+    }
+  });
+});
+
+document.querySelectorAll('.toggle-letter').forEach(button => {
+    button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        content.classList.toggle('hidden');
+    });
+});
 
 
