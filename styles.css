@@ -574,7 +574,7 @@ p strong {
 
 
 /* Style du Quiz */
-#quiz {
+#quizz {
     max-width: 600px;
     margin: 40px auto;
     padding: 20px;
@@ -587,7 +587,7 @@ p strong {
     transition: all 0.4s ease-in-out;
 }
 
-#quiz h2 {
+#quizz h2 {
     font-size: 1.8em;
     margin-bottom: 15px;
     color: #cceeff;
@@ -595,7 +595,7 @@ p strong {
     transition: transform 0.3s;
 }
 
-#quiz h2:hover {
+#quizz h2:hover {
     transform: scale(1.05);
 }
 
@@ -654,6 +654,7 @@ p strong {
     75% { transform: translateX(-5px); }
 }
 
+
 #feedback {
     margin-top: 15px;
     font-size: 1.2em;
@@ -681,6 +682,81 @@ p strong {
     transform: scale(1.05);
 }
 
+/*Quiz Pamela*/
+.quiz-container {
+  background-color: #fffafc;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  font-family: 'Georgia', serif;
+  color: #333;
+}
+
+.quiz-container h3 {
+  color: #d81b60;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.quiz-container ol {
+  padding-left: 20px;
+}
+
+.quiz-container li {
+  margin-bottom: 20px;
+}
+
+.quiz-container label {
+  display: block;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.quiz-container button {
+  background-color: #d81b60;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quiz-container button:hover {
+  background-color: #ad1457;
+}
+
+.quiz-result {
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 15px;
+  color: #00796b;
+}
+
+#quiz-pamela.hidden {
+  display: none;
+}
+
+#toggle-pamela {
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.5em;
+  margin: 30px 0 15px;
+  color: #007acc;
+  transition: color 0.3s ease;
+}
+
+#toggle-pamela:hover {
+  color: #005f99;
+  text-decoration: underline;
+}
+
 /* Style du score final */
 #score-container {
     max-width: 600px;
@@ -696,6 +772,90 @@ p strong {
     transition: all 0.4s ease-in-out;
 }
 
+
+#quiz-coquin {
+  background: linear-gradient(135deg, #2c003e, #4a0072);
+  color: #fddde6;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 30px auto;
+  max-width: 800px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  font-family: 'Georgia', serif;
+}
+
+#quiz-coquin h3 {
+  color: #ff80ab;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  font-style: italic;
+}
+
+#quiz-coquin ol {
+  padding-left: 20px;
+}
+
+#quiz-coquin li {
+  margin-bottom: 25px;
+}
+
+#quiz-coquin label {
+  display: block;
+  margin: 5px 10px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+#quiz-coquin label:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+#quiz-coquin button {
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto 10px auto;
+  transition: background-color 0.3s ease;
+}
+
+#quiz-coquin button:hover {
+  background-color: #f50057;
+}
+
+#quiz-coquin .quiz-result {
+  text-align: center;
+  font-size: 1.4em;
+  margin-top: 15px;
+  color: #ffb6c1;
+  font-weight: bold;
+}
+
+#toggle-coquin {
+  text-align: center;
+  font-size: 1.5em;
+  color: #880e4f;
+  cursor: pointer;
+  margin-top: 40px;
+  transition: color 0.3s ease;
+}
+
+#toggle-coquin:hover {
+  color: #d81b60;
+  text-decoration: underline;
+}
+
+#quiz-coquin.hidden {
+  display: none;
+}
 
 
 
