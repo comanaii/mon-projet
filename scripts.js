@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const errorMsg = document.getElementById("password-error");
   const prompt = document.getElementById("password-prompt");
 
-  const correctPassword = "athena"; // 🔐 Mot de passe à personnaliser
+  const correctPassword = "artemis"; // 🔐 Mot de passe à personnaliser
 
   validateBtn?.addEventListener("click", () => {
     if (passwordInput.value.toLowerCase() === correctPassword) {
@@ -243,3 +243,117 @@ document.querySelectorAll('.toggle-letter').forEach(button => {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const formCoquin = document.getElementById("coquin-quiz-form");
+  const resultCoquin = document.getElementById("quiz-coquin-result");
+  const toggleCoquin = document.getElementById("toggle-coquin");
+  const quizCoquinSection = document.getElementById("quiz-coquin");
+
+  // Affichage/réduction du quiz au clic
+  if (toggleCoquin && quizCoquinSection) {
+    toggleCoquin.addEventListener("click", () => {
+      quizCoquinSection.classList.toggle("hidden");
+    });
+  }
+
+  // Traitement du formulaire
+  if (formCoquin) {
+    formCoquin.addEventListener("submit", function (e) {
+      e.preventDefault();
+      let score = 0;
+      let answered = 0;
+
+      for (let i = 1; i <= 10; i++) {
+        const answer = formCoquin.querySelector(`input[name="q${i}"]:checked`);
+        if (answer) {
+          score += parseInt(answer.value);
+          answered++;
+        }
+      }
+
+      if (answered < 10) {
+        resultCoquin.textContent = `⚠️ Tu dois répondre aux 10 questions (il t'en manque ${10 - answered})`;
+        resultCoquin.style.color = "#ffcc00";
+        return;
+      }
+
+      let message = "";
+      if (score >= 18) {
+        message = `🔥 ${score}/20 – Tu me connais comme personne... 😍`;
+      } else if (score >= 14) {
+        message = `💋 ${score}/20 – Tu me chauffes rien qu'à lire ça !`;
+      } else if (score >= 10) {
+        message = `😉 ${score}/20 – On va devoir approfondir tout ça...`;
+      } else {
+        message = `🤭 ${score}/20 – Hmmm... une séance pratique s’impose.`;
+      }
+
+      resultCoquin.textContent = message;
+      resultCoquin.style.color = "#ffb6c1";
+
+      // Réinitialisation + fermeture après 3 secondes
+      setTimeout(() => {
+        formCoquin.reset();
+        resultCoquin.textContent = '';
+        quizCoquinSection.classList.add("hidden");
+      }, 3000);
+    });
+  }
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const togglePamela = document.getElementById("toggle-pamela");
+  const pamelaSection = document.getElementById("quiz-pamela");
+  const pamelaForm = document.getElementById("pamela-quiz-form");
+  const pamelaResult = document.getElementById("quiz-pamela-result");
+
+  if (togglePamela && pamelaSection) {
+    togglePamela.addEventListener("click", () => {
+      pamelaSection.classList.toggle("hidden");
+    });
+  }
+
+  if (pamelaForm) {
+    pamelaForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let score = 0;
+      let answered = 0;
+
+      for (let i = 1; i <= 10; i++) {
+        const selected = pamelaForm.querySelector(`input[name="q${i}"]:checked`);
+        if (selected) {
+          score += parseInt(selected.value);
+          answered++;
+        }
+      }
+
+      if (answered < 10) {
+        pamelaResult.textContent = `⚠️ Tu dois répondre à toutes les questions (${10 - answered} manquantes)`;
+        pamelaResult.style.color = "#ffcc00";
+        return;
+      }
+
+      let message = "";
+      if (score >= 18) {
+        message = `🌟 ${score}/20 – Tu me connais par cœur !`;
+      } else if (score >= 14) {
+        message = `😊 ${score}/20 – Pas mal du tout !`;
+      } else {
+        message = `😅 ${score}/20 – On va devoir se redécouvrir !`;
+      }
+
+      pamelaResult.textContent = message;
+      pamelaResult.style.color = "#007acc";
+
+      // Réinitialisation après 3 secondes
+      setTimeout(() => {
+        pamelaForm.reset();
+        pamelaResult.textContent = '';
+        pamelaSection.classList.add("hidden"); // Ferme la section
+        }, 3000);
+    });
+  }
+});
