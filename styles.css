@@ -571,25 +571,55 @@ p strong {
     display: none;
 }
 
-.quote {
-  font-style: italic;
-  font-size: 1.2em;
-  color: #ff3366;
-  text-align: center;
-  margin: 20px auto;
+.love-letter.love-letter-obscure {
+  background: #0a0a0a;
+  color: #f7f7f7;
   font-family: 'Georgia', serif;
-  animation: fadeInQuote 2s ease;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255,0,80,0.18);
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.love-letter-obscure .love-letter-title {
+  color: #ff4f81;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 18px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.love-letter-obscure .love-letter-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  font-size: 1.15em;
+  color: #f5d8e6;
+  background: none;
+  padding: 0 5px;
+  transition: max-height 0.7s cubic-bezier(.19,1,.22,1), opacity 0.7s, padding 0.4s;
+}
+
+.love-letter-obscure .love-letter-content.open {
+  max-height: 2000px;
+  opacity: 1;
+  padding: 10px 5px 0 5px;
+}
+
+.love-letter-obscure .quote {
+  font-style: italic;
+  font-size: 1.4em;
+  color: #ff80b3;
+  text-align: center;
+  margin: 30px 0;
+  animation: fadeInQuote 1.2s ease;
 }
 
 @keyframes fadeInQuote {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.95);}
+  to { opacity: 1; transform: scale(1);}
 }
 
 
