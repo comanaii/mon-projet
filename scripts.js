@@ -357,10 +357,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-document.querySelectorAll('.love-letter-obscure .toggle-letter').forEach(title => {
-  title.addEventListener('click', function() {
-    const content = this.nextElementSibling;
-    content.classList.toggle('open');
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.love-letter-obscure .toggle-letter').forEach(title => {
+    title.addEventListener('click', function() {
+      const content = this.nextElementSibling;
+      if(content.classList.contains('open')) {
+        content.classList.remove('open');
+      } else {
+        content.classList.add('open');
+      }
+    });
   });
 });
 
