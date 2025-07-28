@@ -357,6 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.love-letter-obscure .toggle-letter').forEach(title => {
     title.addEventListener('click', function() {
@@ -369,5 +370,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
 
 
