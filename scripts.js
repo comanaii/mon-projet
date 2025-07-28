@@ -357,3 +357,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+document.querySelectorAll('.love-letter-obscure .toggle-letter').forEach(title => {
+  title.addEventListener('click', function() {
+    const content = this.nextElementSibling;
+    content.classList.toggle('open');
+  });
+});
+
+
