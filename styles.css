@@ -1182,3 +1182,22 @@ footer .social-links a:hover {
         padding: 0.5em;
     }
 }
+@media (max-width: 600px) {
+  .love-letter.love-letter-obscure {
+    max-width: 98vw;
+    padding: 18px 5vw;
+    font-size: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255,0,80,0.13);
+    margin: 20px auto;
+  }
+  .love-letter-obscure .love-letter-title {
+    font-size: 1.2em;
+    margin-bottom: 12px;
+  }
+  .love-letter-obscure .love-letter-content {
+    padding: 6px 0 0 0;
+    font-size: 1em;
+    word-break: break-word;
+  }
+}
