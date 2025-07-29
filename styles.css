@@ -603,9 +603,10 @@ p strong {
 }
 
 .love-letter-obscure .love-letter-content.open {
-  max-height: 2000px;
+  max-height: 5000px;
   opacity: 1;
   padding: 10px 5px 0 5px;
+  overflow: visible;
 }
 
 .love-letter-obscure .quote {
