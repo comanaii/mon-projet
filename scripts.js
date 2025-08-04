@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const errorMsg = document.getElementById("password-error");
   const prompt = document.getElementById("password-prompt");
 
-  const correctPassword = "artemis"; // 🔐 Mot de passe à personnaliser
+  const correctPassword = "gaia"; // 🔐 Mot de passe à personnaliser
 
   validateBtn?.addEventListener("click", () => {
     if (passwordInput.value.toLowerCase() === correctPassword) {
