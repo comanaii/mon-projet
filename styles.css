@@ -1288,14 +1288,7 @@ footer .social-links a:hover {
     line-height: 1.6;
   }
 
-  /* Garde le fond masqué tant que ce n'est pas ouvert */
-  .pamela-tree-container::before {
-    display: none;
-  }
-  .pamela-tree-container.open::before {
-    display: block;
-  }
-}
+
 
 
 
