@@ -1278,26 +1278,8 @@ footer .social-links a:hover {
   }
 }
 
-@media (max-width: 768px) {
-  .pamela-tree-content {
-    max-height: none !important; /* autorise le texte complet */
-    overflow: visible !important; /* évite le texte coupé */
-    padding: 10px 8px;
-    background-size: cover; /* évite l’image étirée */
-    background-position: center;
-  }
 
-  .pamela-tree-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .pamela-tree-title {
-    font-size: 1.3em; /* réduit le titre pour mobile */
-    text-align: center;
-  }
-}
 
 
 
