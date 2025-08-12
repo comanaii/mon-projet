@@ -1278,6 +1278,25 @@ footer .social-links a:hover {
   }
 }
 
+/* 📱 Version téléphone pour éviter le texte tronqué */
+@media (max-width: 768px) {
+  .pamela-tree-content {
+    max-height: none !important;   /* Permet l'affichage complet */
+    overflow-y: visible !important;/* Évite la coupure du texte */
+    padding: 15px 10px;
+    font-size: 1em;
+    line-height: 1.6;
+  }
+
+  /* Garde le fond masqué tant que ce n'est pas ouvert */
+  .pamela-tree-container::before {
+    display: none;
+  }
+  .pamela-tree-container.open::before {
+    display: block;
+  }
+}
+
 
 
 
