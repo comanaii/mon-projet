@@ -371,6 +371,25 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Ouverture / fermeture avec feuilles animées
+document.querySelectorAll('.toggle-tree').forEach(title => {
+  title.addEventListener('click', function() {
+    const content = this.nextElementSibling;
+    content.classList.toggle('show-tree');
+
+    // Lancer animation des feuilles
+    if (content.classList.contains('show-tree')) {
+      for (let i = 0; i < 8; i++) {
+        const leaf = document.createElement('div');
+        leaf.classList.add('pamela-tree-leaf');
+        leaf.style.left = Math.random() * 100 + "%";
+        leaf.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        this.parentElement.appendChild(leaf);
+        setTimeout(() => leaf.remove(), 5000);
+      }
+    }
+  });
+});
 
 
 
