@@ -1277,3 +1277,11 @@ footer .social-links a:hover {
     word-break: break-word;
   }
 }
+
+@media (max-width: 768px) {
+  .pamela-tree-content {
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 10px 5px;
+  }
+}
