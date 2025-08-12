@@ -375,21 +375,27 @@ document.addEventListener('DOMContentLoaded', function() {
 document.querySelectorAll('.toggle-tree').forEach(title => {
   title.addEventListener('click', function() {
     const content = this.nextElementSibling;
-    content.classList.toggle('show-tree');
+    const container = this.closest('.pamela-tree-container');
 
-    // Lancer animation des feuilles
+    // Toggle ouverture du texte
+    content.classList.toggle('show-tree');
+    container.classList.toggle('open', content.classList.contains('show-tree'));
+
+    // Lancer animation des feuilles si ouverture
     if (content.classList.contains('show-tree')) {
       for (let i = 0; i < 8; i++) {
         const leaf = document.createElement('div');
         leaf.classList.add('pamela-tree-leaf');
         leaf.style.left = Math.random() * 100 + "%";
         leaf.style.animationDuration = (Math.random() * 3 + 2) + "s";
-        this.parentElement.appendChild(leaf);
+        container.appendChild(leaf);
         setTimeout(() => leaf.remove(), 5000);
       }
     }
   });
 });
+
+
 
 
 
