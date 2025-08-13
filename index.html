@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Le Comanaï – mémoires, voyages, lettres, galerie.">
     <title>Le Comanaï</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -15,18 +16,22 @@
     </div>
     
     <header>
-        <div class="title-container">
-            <h1>Le Comanaï</h1>
-        </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="#books">Mes Livres</a></li>
-                <li><a href="#travels">Mes Voyages</a></li>
-                <li><a href="#letters">Les Lettres du Comanaï</a></li>
-                <li><a href="#gallery">Galerie</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="title-container">
+    <h1>Le Comanaï</h1>
+  </div>
+
+  <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu">☰</button>
+
+  <nav>
+    <ul class="menu" id="site-menu">
+      <li><a href="#books">Mes Livres</a></li>
+      <li><a href="#travels">Mes Voyages</a></li>
+      <li><a href="#letters">Les Lettres du Comanaï</a></li>
+      <li><a href="#gallery">Galerie</a></li>
+    </ul>
+  </nav>
+</header>
+
 
     <section id="hommage-leo">
         <div class="hommage-container">
@@ -134,7 +139,7 @@
             <div class="book-item">
                 <img src="ressources/images/Couverture_1.jpg" alt="Couverture Livre 1" class="book-cover">
                 <div class="book-info">
-                    <a href="https://www.amazon.fr/MEMOIRES-DUN-CORSAIRE-YANN-BLOCHET-ebook/dp/B0DV5PQTSM/" target="_blank">
+                    <a href="https://www.amazon.fr/MEMOIRES-DUN-CORSAIRE-YANN-BLOCHET-ebook/dp/B0DV5PQTSM/" target="_blank" rel="noopener noreferrer">
                         MEMOIRES D’UN CORSAIRE LE COMANAÏ PARTIE 1 – LES PREMICES
                     </a>
                     <p>Livre 1 - Ce sont mes mémoires, le commencement de ma marine et la naissance de mon surnom...</p>
@@ -159,10 +164,7 @@
         </div>
     </section>
     
-
-        <!-- Add more story sections as needed -->
-    </div>
-</div>
+    
 
     <section id="travels">
         <h2>Mes voyages et mes galères</h2>
@@ -752,9 +754,7 @@
 
                         <div id="quiz-coquin" class="quiz-container hidden">
   
-
-
-                        <div id="quiz-coquin" class="quiz-container">
+                        <div class="quiz-container">
                             <h3>🔥 Quiz Coquin – Jusqu'où me connais-tu vraiment ?</h3>
                             <form id="coquin-quiz-form">
                                 <ol>
@@ -920,10 +920,10 @@
 
     <footer>
         <div class="social-links">
-            <a href="https://www.facebook.com" target="_blank">Facebook</a>
-            <a href="https://www.twitter.com" target="_blank">Twitter</a>
-            <a href="https://www.instagram.com" target="_blank">Instagram</a>
-            <a href="https://www.luxolife.fr" target="_blank">Luxothérapie</a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.luxolife.fr" target="_blank" rel="noopener noreferrer">Luxothérapie</a>
         </div>
     </footer>
     <script src="scripts.js"></script>
@@ -1250,4 +1250,3 @@
 
 </body>
 </html>
-
