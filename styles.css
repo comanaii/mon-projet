@@ -354,30 +354,37 @@ body {
 
 
 /* Menu Styles */
-.menu {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    background-color: rgba(0, 51, 102, 0.9);
+
+/* Bouton burger */
+.menu-toggle{
+  display:none;
+  background:none;
+  border:0;
+  font-size:1.8rem;
+  color:#fff;
+  cursor:pointer;
+  padding: .25rem .5rem;
 }
 
-.menu li {
-    margin: 0 10px;
+/* Menu desktop */
+.menu{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  justify-content:center;
+  background-color: rgba(0,51,102,0.9);
 }
-
-.menu a {
-    text-decoration: none;
-    color: #ffffff;
-    padding: 14px 20px;
-    display: block;
-    transition: background-color 0.3s;
+.menu li{ margin:0 10px; }
+.menu a{
+  text-decoration:none;
+  color:#fff;
+  padding:14px 20px;
+  display:block;
+  transition:background-color .3s;
 }
+.menu a:hover{ background:#005f99; }
 
-
-.menu a:hover {
-    background-color: #005f99;
-}
 /* Section Styles */
 section {
     padding: 40px 20px;
@@ -518,17 +525,19 @@ p strong {
   font-family: 'Georgia', serif;
 }
 
-/* Fond en transparence */
+/* Fond : masqué par défaut, visible quand ouvert */
 .pamela-tree-container::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  inset: 0;
   background: url('ressources/images/arbredevie1.png') center/cover no-repeat;
   opacity: 0.25;
   z-index: 0;
+  display: none;
 }
+.pamela-tree-container.open::before { display: block; }
 
-/* Titre */
+/* Titre cliquable */
 .pamela-tree-title {
   position: relative;
   display: flex;
@@ -538,14 +547,9 @@ p strong {
   cursor: pointer;
   z-index: 1;
 }
+.pamela-tree-icon { width: 40px; height: 40px; margin-right: 10px; }
 
-.pamela-tree-icon {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-}
-
-/* Contenu */
+/* Contenu : fermé par défaut */
 .pamela-tree-content {
   position: relative;
   z-index: 1;
@@ -555,13 +559,13 @@ p strong {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 1.2s ease, opacity 0.8s ease;
+  transition: max-height 0.6s ease, opacity 0.4s ease;
 }
-
-.pamela-tree-content.show-tree {
-  max-height: 2000px;
+.pamela-tree-container.open .pamela-tree-content {
+  max-height: none; /* assez grand pour tout le texte */
   opacity: 1;
 }
+
 
 /* Animation des feuilles */
 @keyframes pamela-tree-leaf-fall {
@@ -1166,18 +1170,14 @@ footer .social-links a:hover {
         display: none;
     }
 
+     nav .menu.is-open{
+    display:flex;
+  }
     nav .menu.active {
         display: flex;
     }
 
-    .menu-toggle {
-        display: block;
-        background-color: #333;
-        color: white;
-        padding: 10px;
-        cursor: pointer;
-        text-align: center;
-    }
+    .menu-toggle { display:block; }
 
     header {
         padding: 0.5em;
@@ -1277,21 +1277,5 @@ footer .social-links a:hover {
     word-break: break-word;
   }
 }
-
-/* 📱 Version téléphone pour éviter le texte tronqué */
-@media (max-width: 768px) {
-  .pamela-tree-content {
-    max-height: none !important;   /* Permet l'affichage complet */
-    overflow-y: visible !important;/* Évite la coupure du texte */
-    padding: 15px 10px;
-    font-size: 1em;
-    line-height: 1.6;
-  }
-
-
-
-
-
-
 
 
