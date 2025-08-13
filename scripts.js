@@ -371,27 +371,23 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Ouverture / fermeture avec feuilles animées
-document.querySelectorAll('.toggle-tree').forEach(title => {
-  title.addEventListener('click', function() {
-    const content = this.nextElementSibling;
-    const container = this.closest('.pamela-tree-container');
+  document.addEventListener('DOMContentLoaded', () => {
+  /* ===== BURGER ===== */
+  const btn = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('site-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  }
 
-    // Toggle ouverture du texte
-    content.classList.toggle('show-tree');
-    container.classList.toggle('open', content.classList.contains('show-tree'));
-
-    // Lancer animation des feuilles si ouverture
-    if (content.classList.contains('show-tree')) {
-      for (let i = 0; i < 8; i++) {
-        const leaf = document.createElement('div');
-        leaf.classList.add('pamela-tree-leaf');
-        leaf.style.left = Math.random() * 100 + "%";
-        leaf.style.animationDuration = (Math.random() * 3 + 2) + "s";
-        container.appendChild(leaf);
-        setTimeout(() => leaf.remove(), 5000);
-      }
-    }
+  /* ===== ARBRE DE VIE ===== */
+  document.addEventListener('click', (e) => {
+    const title = e.target.closest('.pamela-tree-title');
+    if (!title) return;
+    const container = title.closest('.pamela-tree-container');
+    if (container) container.classList.toggle('open');
   });
 });
 
