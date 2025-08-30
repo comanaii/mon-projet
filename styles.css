@@ -446,6 +446,7 @@ p strong {
     justify-content: center;
 }
 
+/* Lettre principale avec fond et ombre */
 .lettre-container {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(2px);
@@ -457,12 +458,15 @@ p strong {
     font-family: 'Georgia', serif;
     color: #4b2e2e;
     transition: transform 0.4s ease;
+    margin-bottom: 30px;
 }
 
+/* Effet au survol pour agrandir légèrement la lettre */
 .lettre-container:hover {
     transform: scale(1.01);
 }
 
+/* Titre de la lettre */
 .lettre-container h2 {
     font-size: 2.4em;
     color: #c94c4c;
@@ -475,18 +479,16 @@ p strong {
     color: #8e2e2e;
 }
 
+/* Contenu de la lettre */
 .lettre-contenu {
     font-size: 1.1em;
     line-height: 1.8;
     text-align: justify;
     padding-top: 20px;
+    display: none; /* Cacher le contenu au début */
 }
 
-#toggle-lettre {
-    position: relative;
-    overflow: visible;
-}
-
+/* Cœurs animés */
 .heart {
     position: absolute;
     top: -10px;
@@ -501,6 +503,7 @@ p strong {
 .heart::before {
     content: "♥";
 }
+
 @keyframes floatUp {
     0% {
         transform: translateY(0) scale(1);
@@ -1278,4 +1281,24 @@ footer .social-links a:hover {
   }
 }
 
+@media (max-width: 768px) {
+    .lettre-container {
+        max-width: 100%;
+        padding: 20px;
+    }
 
+    .lettre-container h2 {
+        font-size: 2em;
+    }
+
+    .lettre-contenu {
+        font-size: 1em;
+        line-height: 1.6;
+        padding-top: 10px;
+        display: none; /* Cacher le contenu au départ, selon le clic */
+    }
+
+    .heart {
+        font-size: 14px;
+    }
+}
