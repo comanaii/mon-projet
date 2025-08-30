@@ -175,19 +175,27 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const toggleLettre = document.getElementById("toggle-lettre");
-    const contenuLettre = document.querySelector(".lettre-contenu");
+    // Sélectionner le premier et le deuxième titre et contenu de lettre
+    const toggleLettre1 = document.getElementById("toggle-lettre-1");
+    const contenuLettre1 = document.querySelector("#toggle-lettre-1 + .lettre-contenu");
 
-    if (toggleLettre && contenuLettre) {
-        toggleLettre.addEventListener("click", () => {
-            const visible = contenuLettre.style.display === "block";
-            contenuLettre.style.display = visible ? "none" : "block";
-            if (!visible) {
-                lancerCoeurs(toggleLettre);
-            }
-        });
+    const toggleLettre2 = document.getElementById("toggle-lettre-2");
+    const contenuLettre2 = document.querySelector("#toggle-lettre-2 + .lettre-contenu");
+
+    // Fonction d'ouverture/fermeture des lettres
+    function handleLetterToggle(toggleLettre, contenuLettre) {
+        if (toggleLettre && contenuLettre) {
+            toggleLettre.addEventListener("click", () => {
+                const visible = contenuLettre.style.display === "block";
+                contenuLettre.style.display = visible ? "none" : "block";
+                if (!visible) {
+                    lancerCoeurs(toggleLettre);
+                }
+            });
+        }
     }
 
+    // Lancer les cœurs avec animation
     function lancerCoeurs(sourceElement) {
         for (let i = 0; i < 12; i++) {
             const heart = document.createElement("div");
@@ -198,7 +206,13 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => heart.remove(), 1500);
         }
     }
+
+    // Appeler la fonction pour chaque lettre
+    handleLetterToggle(toggleLettre1, contenuLettre1);
+    handleLetterToggle(toggleLettre2, contenuLettre2);
 });
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const imgLeo = document.getElementById("leo-toggle");
@@ -390,7 +404,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (container) container.classList.toggle('open');
   });
 });
-
 
 
 
