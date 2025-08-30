@@ -443,8 +443,11 @@ p strong {
     padding: 60px 20px;
     background: linear-gradient(180deg, #fff0f5, #fceef3);
     display: flex;
-    justify-content: center;
+    flex-direction: column;  /* <-- les conteneurs s’empilent verticalement */
+    align-items: center;     /* garde le centrage */
+    gap: 30px;               /* espace entre les lettres */
 }
+
 
 /* Lettre principale avec fond et ombre */
 .lettre-container {
@@ -1368,8 +1371,4 @@ footer .social-links a:hover {
     overflow-x: hidden;
   }
 }
-
-
-
-
 
