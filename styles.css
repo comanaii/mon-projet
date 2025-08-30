@@ -1312,8 +1312,8 @@ footer .social-links a:hover {
   #lettres .tab-content .content-box,
   .tab-content .content-box {
     box-sizing: border-box;
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 75% !important;
+    max-width: 75% !important;
     margin: 0 auto !important;
     padding: 16px 14px !important;
 
@@ -1356,8 +1356,8 @@ footer .social-links a:hover {
   #letters .tab-content .content-box iframe,
   #lettres .tab-content .content-box iframe,
   .tab-content .content-box iframe {
-    max-width: 100% !important;
-    width: 100% !important;
+    max-width: 75% !important;
+    width: 75% !important;
     height: auto !important;
     display: block;
     margin: 10px auto;
@@ -1368,6 +1368,7 @@ footer .social-links a:hover {
     overflow-x: hidden;
   }
 }
+
 
 
 
