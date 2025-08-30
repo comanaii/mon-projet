@@ -1302,3 +1302,25 @@ footer .social-links a:hover {
         font-size: 14px;
     }
 }
+
+/* 📱 Adaptation des lettres (ex: #letter20) pour le mobile */
+@media (max-width: 768px) {
+  .tab-content .content-box {
+    max-width: 100%;          /* prend toute la largeur disponible */
+    padding: 15px;            /* marges internes réduites */
+    font-size: 1em;           /* texte un peu plus petit */
+    line-height: 1.6;         /* interligne plus confortable */
+    word-wrap: break-word;    /* coupe les mots trop longs */
+    overflow-wrap: break-word;
+  }
+
+  .tab-content .content-box h3 {
+    font-size: 1.3em;         /* titre adapté pour petits écrans */
+    text-align: center;
+  }
+
+  .tab-content .content-box p {
+    margin-bottom: 12px;      /* espace suffisant entre paragraphes */
+    text-align: justify;      /* garde la mise en page propre */
+  }
+}
