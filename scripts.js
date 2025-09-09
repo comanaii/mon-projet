@@ -442,6 +442,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Ferme toutes les lettres au chargement
+  document.querySelectorAll('.tab-content .content-box').forEach(box => {
+    box.classList.remove('open');
+  });
+
+  // Clic sur le titre => ouvre/ferme uniquement la lettre correspondante
+  document.querySelectorAll('.tab-content .content-box > h3').forEach(title => {
+    title.setAttribute('role', 'button');
+    title.setAttribute('tabindex', '0');
+    title.setAttribute('aria-expanded', 'false');
+
+    const toggle = () => {
+      const box = title.parentElement;
+      const isOpen = box.classList.toggle('open');
+      title.setAttribute('aria-expanded', String(isOpen));
+    };
+
+    title.addEventListener('click', toggle);
+    title.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle();
+      }
+    });
+  });
+});
+
+
 
 
 
