@@ -405,6 +405,42 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Ouverture/fermeture + pluie d'étoiles (prefix astro-)
+document.addEventListener('DOMContentLoaded', () => {
+  const title   = document.getElementById('toggle-astro');
+  const content = document.querySelector('#toggle-astro + .astro-content');
+  const box     = title?.closest('.astro-container');
+
+  if (!title || !content || !box) return;
+
+  title.addEventListener('click', () => {
+    const opening = !content.classList.contains('show');
+    content.style.display = 'block';         // assure la place
+    requestAnimationFrame(() => content.classList.toggle('show'));
+
+    if (opening) spawnStars(box, 20);        // nombre d’étoiles à l’ouverture
+    else setTimeout(() => {                  // referme proprement après l’anim
+      content.classList.remove('show');
+      setTimeout(() => content.style.display = 'none', 350);
+    }, 0);
+  });
+
+  function spawnStars(container, count = 16) {
+    for (let i = 0; i < count; i++) {
+      const star = document.createElement('div');
+      star.className = 'astro-star';
+      // position X aléatoire et dérive légère pendant la chute
+      const left = Math.random() * 100;                // en %
+      const drift = (Math.random() * 80 - 40) + 'px';  // -40px à +40px
+      star.style.left = left + '%';
+      star.style.setProperty('--drift', drift);
+      star.style.animationDuration = (Math.random() * 1.8 + 1.4) + 's';
+      star.style.animationDelay = (Math.random() * 0.3) + 's';
+      container.appendChild(star);
+      setTimeout(() => star.remove(), 2600);
+    }
+  }
+});
 
 
 
