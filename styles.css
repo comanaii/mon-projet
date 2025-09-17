@@ -1482,4 +1482,43 @@ footer .social-links a:hover {
   transform: translateY(10%) rotate(90deg);
 }
 
+/* ===== Aurore boréale - fond vert/noir fluide ===== */
+.borea-wrap{ position:relative; isolation:isolate; padding:clamp(24px,5vw,56px) 16px; display:flex; justify-content:center; align-items:center; background:#05080b; overflow:hidden; }
+.borea-bg{ position:absolute; inset:-30%; z-index:-1;
+  background:
+    radial-gradient(1200px 800px at 18% -10%, rgba(0,255,179,.16), transparent 60%),
+    radial-gradient(900px 700px at 82% -22%, rgba(80,255,120,.14), transparent 65%),
+    radial-gradient(700px 600px at 50% 0%, rgba(140,255,210,.10), transparent 55%),
+    linear-gradient(#05080b, #060a0f 60%, #05080b);
+  filter: blur(3px) saturate(115%);
+  animation: boreaFlow 22s ease-in-out infinite alternate;
+}
+@keyframes boreaFlow{ 0%{transform:translate3d(-2%,-1%,0) scale(1.02);} 50%{transform:translate3d(2%,1%,0) scale(1.05);} 100%{transform:translate3d(-1%,0,0) scale(1.03);} }
+
+/* Carte */
+.borea-card{ width:min(920px,100%); background:rgba(8,12,18,.36); border:1px solid rgba(60,120,90,.35); border-radius:16px; backdrop-filter:blur(8px); box-shadow:0 12px 44px rgba(0,40,25,.45); padding:clamp(18px,3vw,28px); color:#e9fff1; }
+
+/* Quiz */
+.borea-label{ display:block; color:#c7ffda; margin:0 0 8px; }
+.borea-row{ display:flex; gap:10px; align-items:center; margin:8px 0 6px; }
+.borea-input{ flex:1 1 auto; padding:12px 14px; border-radius:10px; background:rgba(5,12,10,.6); color:#eafff6; border:1px solid rgba(70,140,110,.45); outline:none; transition:border .2s, box-shadow .2s; }
+.borea-input:focus{ border-color:#5cffb0; box-shadow:0 0 0 3px rgba(92,255,176,.22); }
+.borea-btn{ border:0; border-radius:10px; padding:12px 16px; cursor:pointer; color:#04130a; font-weight:700; background:linear-gradient(90deg,#3aff98,#a3ffd9); }
+.borea-btn:hover{ filter:brightness(1.06); }
+.borea-feedback{ min-height:1.2em; color:#ffb3b3; }
+
+/* Titre (affiché après quiz réussi) */
+.borea-title{ width:100%; margin:6px 0 0; padding:10px 8px; background:transparent; border:0; text-align:center; font-size:clamp(1.4rem,3.4vw,2.1rem); color:#baffcf; text-shadow:0 0 12px rgba(80,255,150,.25); cursor:pointer; }
+
+/* Panneau – pas de display:none pour rester mesurable */
+.borea-panel{ display:block; overflow:hidden; height:0; opacity:0; }
+
+/* Responsive */
+@media (max-width: 768px){ .borea-row{ flex-direction:column; align-items:stretch; } .borea-btn{ width:100%; } }
+
+/* Accessibilité motion */
+@media (prefers-reduced-motion: reduce){ .borea-bg{ animation:none; } }
+
+
+
 
