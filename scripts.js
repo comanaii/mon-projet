@@ -470,6 +470,103 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const roots = document.querySelectorAll('[data-borea-root]');
+  if (!roots.length) return;
+
+  const normalize = s => (s||'')
+    .toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/\s+/g,' ').trim();
+
+  roots.forEach(root => {
+    const form    = root.querySelector('.borea-quiz');
+    const input   = root.querySelector('.borea-input');
+    const fb      = root.querySelector('.borea-feedback');
+    const title   = root.querySelector('[data-borea-title]');
+    const panel   = root.querySelector('[data-borea-panel]');
+
+    if (!form || !input || !title || !panel) return;
+
+    // 1) Quiz -> si correct : on montre SEULEMENT le titre
+    const answers = (form.dataset.answers||'').split('|').map(s=>s.trim()).filter(Boolean);
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const ok = answers.some(a => normalize(a) === normalize(input.value));
+      if (ok){
+        fb.textContent = '';
+        form.style.display = 'none';
+        title.style.display = 'block';
+        title.focus({preventScroll:true});
+      } else {
+        fb.textContent = 'Presque… essaie encore 🌙';
+        input.focus(); input.select();
+      }
+    });
+
+    // 2) Toggle animé (height de 0 -> scrollHeight, puis auto)
+    let animating = false;
+    const openPanel = () => {
+      if (animating) return; animating = true;
+      panel.style.transition = 'none';
+      panel.style.height = '0px';
+      panel.style.opacity = '0';
+      // forcer un reflow
+      void panel.offsetHeight;
+      const target = panel.scrollHeight + 'px';
+      panel.style.transition = 'height .55s ease, opacity .45s ease';
+      panel.style.height = target;
+      panel.style.opacity = '1';
+      const onEnd = (ev) => {
+        if (ev.propertyName !== 'height') return;
+        panel.style.transition = '';
+        panel.style.height = 'auto';    // libère la hauteur pour contenu long
+        panel.removeEventListener('transitionend', onEnd);
+        animating = false;
+      };
+      panel.addEventListener('transitionend', onEnd);
+    };
+
+    const closePanel = () => {
+      if (animating) return; animating = true;
+      // repasser de auto -> px pour pouvoir animer vers 0
+      panel.style.height = panel.scrollHeight + 'px';
+      panel.style.opacity = '1';
+      void panel.offsetHeight;
+      panel.style.transition = 'height .45s ease, opacity .35s ease';
+      panel.style.height = '0px';
+      panel.style.opacity = '0';
+      const onEnd = (ev) => {
+        if (ev.propertyName !== 'height') return;
+        panel.style.transition = '';
+        panel.removeEventListener('transitionend', onEnd);
+        animating = false;
+      };
+      panel.addEventListener('transitionend', onEnd);
+    };
+
+    const togglePanel = () => {
+      const expanded = title.getAttribute('aria-expanded') === 'true';
+      if (expanded) {
+        title.setAttribute('aria-expanded','false');
+        closePanel();
+      } else {
+        title.setAttribute('aria-expanded','true');
+        openPanel();
+      }
+    };
+
+    title.addEventListener('click', togglePanel);
+    title.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); togglePanel(); }
+    });
+  });
+});
+
+
+
+
+
 
 
 
