@@ -564,6 +564,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const answerAdieu = document.getElementById("answer-adieu");
+  const checkAdieu = document.getElementById("check-adieu");
+  const titleContainerAdieu = document.getElementById("adieu-title-container");
+  const toggleAdieu = document.getElementById("toggle-adieu");
+  const adieuContent = document.getElementById("adieu-content");
+
+  // Vérifie la réponse du quiz
+  if (checkAdieu) {
+    checkAdieu.addEventListener("click", () => {
+      if (answerAdieu.value.trim().toLowerCase() === "paméla" || answerAdieu.value.trim().toLowerCase() === "pamela") {
+        titleContainerAdieu.style.display = "block";
+      } else {
+        alert("Mauvaise réponse… essaie encore !");
+      }
+    });
+  }
+
+  // Toggle du texte au clic sur le titre
+  if (toggleAdieu) {
+    toggleAdieu.addEventListener("click", () => {
+      adieuContent.style.display = adieuContent.style.display === "block" ? "none" : "block";
+    });
+  }
+});
 
 
 
