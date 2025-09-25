@@ -1520,5 +1520,48 @@ footer .social-links a:hover {
 @media (prefers-reduced-motion: reduce){ .borea-bg{ animation:none; } }
 
 
+/* Aurore boréale douce */
+#adieu-pamela .quiz-container {
+  background: linear-gradient(135deg, #020b0a 0%, #0a2e2a 50%, #020b0a 100%);
+  background-size: 200% 200%;
+  animation: auroraSoft 20s ease-in-out infinite;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 30px auto;
+  max-width: 900px;
+  color: #ccc; /* gris clair lisible */
+  font-family: 'Georgia', serif;
+  text-align: justify;
+  box-shadow: 0 0 25px rgba(0, 128, 96, 0.2);
+}
+
+/* Titre */
+#adieu-pamela h2 {
+  color: #6fe2c2; /* vert d’eau doux */
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 1.6em;
+  transition: color 0.4s ease;
+}
+
+#adieu-pamela h2:hover {
+  color: #92f0d8; /* un peu plus lumineux au survol */
+}
+
+/* Animation subtile d’aurore boréale */
+@keyframes auroraSoft {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Texte */
+#adieu-pamela .letter-content {
+  display: none;
+  margin-top: 15px;
+  font-size: 1.1em;
+  line-height: 1.7;
+}
 
 
