@@ -590,6 +590,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+function toggleSouvenirs() {
+    const section = document.getElementById("souvenirs-pamela");
+    section.classList.toggle("visible");
+}
 
 
 
