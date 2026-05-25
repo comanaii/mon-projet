@@ -354,37 +354,30 @@ body {
 
 
 /* Menu Styles */
-
-/* Bouton burger */
-.menu-toggle{
-  display:none;
-  background:none;
-  border:0;
-  font-size:1.8rem;
-  color:#fff;
-  cursor:pointer;
-  padding: .25rem .5rem;
+.menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 51, 102, 0.9);
 }
 
-/* Menu desktop */
-.menu{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  justify-content:center;
-  background-color: rgba(0,51,102,0.9);
+.menu li {
+    margin: 0 10px;
 }
-.menu li{ margin:0 10px; }
-.menu a{
-  text-decoration:none;
-  color:#fff;
-  padding:14px 20px;
-  display:block;
-  transition:background-color .3s;
-}
-.menu a:hover{ background:#005f99; }
 
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 14px 20px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+
+.menu a:hover {
+    background-color: #005f99;
+}
 /* Section Styles */
 section {
     padding: 40px 20px;
@@ -443,13 +436,9 @@ p strong {
     padding: 60px 20px;
     background: linear-gradient(180deg, #fff0f5, #fceef3);
     display: flex;
-    flex-direction: column;  /* <-- les conteneurs s’empilent verticalement */
-    align-items: center;     /* garde le centrage */
-    gap: 30px;               /* espace entre les lettres */
+    justify-content: center;
 }
 
-
-/* Lettre principale avec fond et ombre */
 .lettre-container {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(2px);
@@ -461,15 +450,12 @@ p strong {
     font-family: 'Georgia', serif;
     color: #4b2e2e;
     transition: transform 0.4s ease;
-    margin-bottom: 30px;
 }
 
-/* Effet au survol pour agrandir légèrement la lettre */
 .lettre-container:hover {
     transform: scale(1.01);
 }
 
-/* Titre de la lettre */
 .lettre-container h2 {
     font-size: 2.4em;
     color: #c94c4c;
@@ -482,16 +468,18 @@ p strong {
     color: #8e2e2e;
 }
 
-/* Contenu de la lettre */
 .lettre-contenu {
     font-size: 1.1em;
     line-height: 1.8;
     text-align: justify;
     padding-top: 20px;
-    display: none; /* Cacher le contenu au début */
 }
 
-/* Cœurs animés */
+#toggle-lettre {
+    position: relative;
+    overflow: visible;
+}
+
 .heart {
     position: absolute;
     top: -10px;
@@ -506,7 +494,6 @@ p strong {
 .heart::before {
     content: "♥";
 }
-
 @keyframes floatUp {
     0% {
         transform: translateY(0) scale(1);
@@ -517,78 +504,6 @@ p strong {
         opacity: 0;
     }
 }
-
-/* Conteneur principal */
-.pamela-tree-container {
-  position: relative;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 12px;
-  overflow: hidden;
-  margin: 40px auto;
-  padding: 20px;
-  max-width: 850px;
-  color: #f5f5f5;
-  font-family: 'Georgia', serif;
-}
-
-/* Fond : masqué par défaut, visible quand ouvert */
-.pamela-tree-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('ressources/images/arbredevie1.png') center/cover no-repeat;
-  opacity: 0.25;
-  z-index: 0;
-  display: none;
-}
-.pamela-tree-container.open::before { display: block; }
-
-/* Titre cliquable */
-.pamela-tree-title {
-  position: relative;
-  display: flex;
-  align-items: center;
-  font-size: 1.8em;
-  color: #c2ffb5;
-  cursor: pointer;
-  z-index: 1;
-}
-.pamela-tree-icon { width: 40px; height: 40px; margin-right: 10px; }
-
-/* Contenu : fermé par défaut */
-.pamela-tree-content {
-  position: relative;
-  z-index: 1;
-  line-height: 1.7;
-  font-size: 1.1em;
-  padding-top: 15px;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.6s ease, opacity 0.4s ease;
-}
-.pamela-tree-container.open .pamela-tree-content {
-  max-height: none; /* assez grand pour tout le texte */
-  opacity: 1;
-}
-
-
-/* Animation des feuilles */
-@keyframes pamela-tree-leaf-fall {
-  0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(500px) rotate(360deg); opacity: 0; }
-}
-
-.pamela-tree-leaf {
-  position: absolute;
-  top: -50px;
-  background: url('ressources/images/leaf.png') no-repeat center/contain;
-  width: 25px;
-  height: 25px;
-  animation: pamela-tree-leaf-fall linear forwards;
-  z-index: 2;
-}
-
 
 .password-prompt {
     margin: 15px 0;
@@ -656,56 +571,43 @@ p strong {
     display: none;
 }
 
-.love-letter.love-letter-obscure {
-  background: #0a0a0a;
-  color: #f7f7f7;
+/* Lettre érotique spécifique */
+.love-letter-obscure {
+  background: linear-gradient(145deg, #1f1b24, #302c36);
+  color: #f8f1f1;
   font-family: 'Georgia', serif;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 30px rgba(255,0,80,0.18);
-  max-width: 800px;
-  margin: 50px auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
+/* Titre uniquement pour cette lettre */
 .love-letter-obscure .love-letter-title {
-  color: #ff4f81;
-  font-size: 2em;
-  text-align: center;
-  margin-bottom: 18px;
-  cursor: pointer;
-  user-select: none;
+  color: #cc0033;
 }
 
-.love-letter-obscure .love-letter-content {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  font-size: 1.15em;
-  color: #f5d8e6;
-  background: none;
-  padding: 0 5px;
-  transition: max-height 0.7s cubic-bezier(.19,1,.22,1), opacity 0.7s, padding 0.4s;
+.love-letter-obscure .love-letter-title:hover {
+  color: #ff3366;
 }
 
-.love-letter-obscure .love-letter-content.open {
-  max-height: 5000px;
-  opacity: 1;
-  padding: 10px 5px 0 5px;
-  overflow: visible;
-}
-
+/* Citation sensuelle */
 .love-letter-obscure .quote {
   font-style: italic;
-  font-size: 1.4em;
-  color: #ff80b3;
+  font-size: 1.3em;
+  color: #ff4d79;
   text-align: center;
-  margin: 30px 0;
+  margin: 25px 0;
   animation: fadeInQuote 1.2s ease;
 }
 
+
 @keyframes fadeInQuote {
-  from { opacity: 0; transform: scale(0.95);}
-  to { opacity: 1; transform: scale(1);}
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 
@@ -1176,14 +1078,18 @@ footer .social-links a:hover {
         display: none;
     }
 
-     nav .menu.is-open{
-    display:flex;
-  }
     nav .menu.active {
         display: flex;
     }
 
-    .menu-toggle { display:block; }
+    .menu-toggle {
+        display: block;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        text-align: center;
+    }
 
     header {
         padding: 0.5em;
@@ -1264,385 +1170,333 @@ footer .social-links a:hover {
         padding: 0.5em;
     }
 }
-@media (max-width: 600px) {
-  .love-letter.love-letter-obscure {
-    max-width: 98vw;
-    padding: 18px 5vw;
-    font-size: 1em;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(255,0,80,0.13);
-    margin: 20px auto;
-  }
-  .love-letter-obscure .love-letter-title {
-    font-size: 1.2em;
-    margin-bottom: 12px;
-  }
-  .love-letter-obscure .love-letter-content {
-    padding: 6px 0 0 0;
-    font-size: 1em;
-    word-break: break-word;
-  }
+
+/* =========================================================
+   REFONTE COMANAÏ - thème marine moderne
+   Ajout non destructif : placé en fin de fichier pour surcharger l'ancien style.
+   ========================================================= */
+:root {
+  --navy-950: #020b18;
+  --navy-900: #06162b;
+  --navy-800: #082443;
+  --ocean-700: #075985;
+  --ocean-500: #0ea5c6;
+  --foam: #dff8ff;
+  --gold: #f6c453;
+  --gold-soft: rgba(246, 196, 83, .22);
+  --glass: rgba(7, 22, 43, .72);
+  --glass-light: rgba(255, 255, 255, .09);
+  --text: #f8fbff;
+  --muted: #b9d9e8;
+  --danger: #ef4444;
+  --success: #22c55e;
 }
 
-@media (max-width: 768px) {
-    .lettre-container {
-        max-width: 100%;
-        padding: 20px;
-    }
+html { scroll-behavior: smooth; }
 
-    .lettre-container h2 {
-        font-size: 2em;
-    }
-
-    .lettre-contenu {
-        font-size: 1em;
-        line-height: 1.6;
-        padding-top: 10px;
-        display: none; /* Cacher le contenu au départ, selon le clic */
-    }
-
-    .heart {
-        font-size: 14px;
-    }
-}
-
-/* 📱 Fix mobile pour TOUTES les lettres des onglets (ex : #letter20)
-   -> texte jamais trop large, pas tronqué, images/iframes qui se redimensionnent */
-@media (max-width: 768px) {
-
-  /* Couvre à la fois #letters (anglais) et #lettres (français) */
-  #letters .tab-content .content-box,
-  #lettres .tab-content .content-box,
-  .tab-content .content-box {
-    box-sizing: border-box;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 16px 14px !important;
-
-    font-size: 1rem !important;
-    line-height: 1.7 !important;
-
-    /* Empêche tout débordement horizontal / texte coupé */
-    white-space: normal !important;
-    word-break: break-word !important;
-    overflow-wrap: break-word !important;
-    hyphens: auto;
-    overflow: visible !important;
-  }
-
-  /* Les titres dans les content-box */
-  #letters .tab-content .content-box h3,
-  #lettres .tab-content .content-box h3,
-  .tab-content .content-box h3 {
-    font-size: 1.25rem !important; /* ≈20px */
-    line-height: 1.3 !important;
-    text-align: center;
-    margin: 0 0 12px;
-  }
-
-  /* Paragraphes : respiration correcte */
-  #letters .tab-content .content-box p,
-  #lettres .tab-content .content-box p,
-  .tab-content .content-box p {
-    margin: 0 0 12px;
-    text-align: justify;
-  }
-
-  /* Médias responsives à l’intérieur des lettres */
-  #letters .tab-content .content-box img,
-  #lettres .tab-content .content-box img,
-  .tab-content .content-box img,
-  #letters .tab-content .content-box video,
-  #lettres .tab-content .content-box video,
-  .tab-content .content-box video,
-  #letters .tab-content .content-box iframe,
-  #lettres .tab-content .content-box iframe,
-  .tab-content .content-box iframe {
-    max-width: 100% !important;
-    width: 100% !important;
-    height: auto !important;
-    display: block;
-    margin: 10px auto;
-  }
-
-  /* Sécurité anti-scroll horizontal global pour la zone lettres */
-  #letters, #lettres {
-    overflow-x: hidden;
-  }
-}
-
-/* Conteneur et titre */
-.astro-container {
-  position: relative;
-  background: radial-gradient(1200px 400px at 50% -200px, rgba(255,255,255,0.08), transparent 60%),
-              rgba(10, 10, 20, 0.9);
-  color: #f1f3ff;
-  border-radius: 14px;
-  border: 1px solid rgba(160,170,255,0.18);
-  box-shadow: 0 8px 30px rgba(20,20,50,0.35);
-  max-width: 850px;
-  margin: 40px auto;
-  padding: 28px 24px;
-  overflow: hidden; /* masque les étoiles sortantes */
-  font-family: 'Georgia', serif;
-}
-
-.astro-title {
-  margin: 0 0 10px;
-  text-align: center;
-  font-size: 2rem;
-  letter-spacing: .5px;
-  color: #cdd6ff;
-  cursor: pointer;
-  user-select: none;
-  transition: color .25s ease;
-}
-.astro-title:hover { color: #e9edff; }
-
-/* Contenu (ouverture fluide) */
-.astro-content {
-  line-height: 1.8;
-  font-size: 1.08rem;
-  color: #eaefff;
-  opacity: 0;
-  max-height: 0;
-  transition: opacity .6s ease, max-height 1s ease;
-}
-.astro-content.show {
-  opacity: 1;
-  max-height: 5000px;
-}
-.astro-content p { margin: 14px 0; }
-
-/* Étoiles */
-.astro-star {
-  position: absolute;
-  top: 0;
-  width: 6px; height: 6px;
-  background: radial-gradient(circle, #fff 0%, #d7e3ff 40%, rgba(255,255,255,0) 70%);
-  border-radius: 50%;
-  box-shadow: 0 0 8px 2px rgba(220,230,255,0.7);
-  opacity: 0;
-  animation: astro-fall linear forwards;
-}
-@keyframes astro-fall {
-  0%   { transform: translateY(-10px) translateX(0) scale(0.7); opacity: 0; }
-  10%  { opacity: 1; }
-  100% { transform: translateY(420px) translateX(var(--drift, 0px)) scale(0.9); opacity: 0; }
-}
-
-.highlight-astro {
-  font-weight: bold;
-  color: #ffd700;                 /* doré lumineux */
-  text-shadow: 0 0 8px #ffea8a,   /* halo doux */
-               0 0 16px #ffd700;
-  animation: glowPulse 2.5s infinite ease-in-out;
-}
-
-@keyframes glowPulse {
-  0%, 100% { text-shadow: 0 0 8px #ffea8a, 0 0 16px #ffd700; }
-  50%      { text-shadow: 0 0 14px #fff3b0, 0 0 28px #ffd700; }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .astro-container { margin: 24px auto; padding: 20px 16px; }
-  .astro-title { font-size: 1.5rem; }
-  .astro-content { font-size: 1rem; line-height: 1.7; }
-}
-
-/* Lettres : par défaut on ne montre que le titre h3 */
-.tab-content .content-box:not(.open) > :not(h3) {
-  display: none;
-}
-
-/* Ouvert : on affiche tout (h4, p, etc.) */
-.tab-content .content-box.open > :not(h3) {
-  display: block;
-}
-
-/* Un petit indicateur visuel sur le titre cliquable */
-.tab-content .content-box > h3 {
-  cursor: pointer;
-  position: relative;
-  padding-right: 1.6em;
-}
-
-.tab-content .content-box > h3::after {
-  content: "▸";
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform: translateY(10%);
-  transition: transform .2s ease;
-}
-
-.tab-content .content-box.open > h3::after {
-  transform: translateY(10%) rotate(90deg);
-}
-
-/* ===== Aurore boréale - fond vert/noir fluide ===== */
-.borea-wrap{ position:relative; isolation:isolate; padding:clamp(24px,5vw,56px) 16px; display:flex; justify-content:center; align-items:center; background:#05080b; overflow:hidden; }
-.borea-bg{ position:absolute; inset:-30%; z-index:-1;
+body {
+  color: var(--text);
   background:
-    radial-gradient(1200px 800px at 18% -10%, rgba(0,255,179,.16), transparent 60%),
-    radial-gradient(900px 700px at 82% -22%, rgba(80,255,120,.14), transparent 65%),
-    radial-gradient(700px 600px at 50% 0%, rgba(140,255,210,.10), transparent 55%),
-    linear-gradient(#05080b, #060a0f 60%, #05080b);
-  filter: blur(3px) saturate(115%);
-  animation: boreaFlow 22s ease-in-out infinite alternate;
-}
-@keyframes boreaFlow{ 0%{transform:translate3d(-2%,-1%,0) scale(1.02);} 50%{transform:translate3d(2%,1%,0) scale(1.05);} 100%{transform:translate3d(-1%,0,0) scale(1.03);} }
-
-/* Carte */
-.borea-card{ width:min(920px,100%); background:rgba(8,12,18,.36); border:1px solid rgba(60,120,90,.35); border-radius:16px; backdrop-filter:blur(8px); box-shadow:0 12px 44px rgba(0,40,25,.45); padding:clamp(18px,3vw,28px); color:#e9fff1; }
-
-/* Quiz */
-.borea-label{ display:block; color:#c7ffda; margin:0 0 8px; }
-.borea-row{ display:flex; gap:10px; align-items:center; margin:8px 0 6px; }
-.borea-input{ flex:1 1 auto; padding:12px 14px; border-radius:10px; background:rgba(5,12,10,.6); color:#eafff6; border:1px solid rgba(70,140,110,.45); outline:none; transition:border .2s, box-shadow .2s; }
-.borea-input:focus{ border-color:#5cffb0; box-shadow:0 0 0 3px rgba(92,255,176,.22); }
-.borea-btn{ border:0; border-radius:10px; padding:12px 16px; cursor:pointer; color:#04130a; font-weight:700; background:linear-gradient(90deg,#3aff98,#a3ffd9); }
-.borea-btn:hover{ filter:brightness(1.06); }
-.borea-feedback{ min-height:1.2em; color:#ffb3b3; }
-
-/* Titre (affiché après quiz réussi) */
-.borea-title{ width:100%; margin:6px 0 0; padding:10px 8px; background:transparent; border:0; text-align:center; font-size:clamp(1.4rem,3.4vw,2.1rem); color:#baffcf; text-shadow:0 0 12px rgba(80,255,150,.25); cursor:pointer; }
-
-/* Panneau – pas de display:none pour rester mesurable */
-.borea-panel{ display:block; overflow:hidden; height:0; opacity:0; }
-
-/* Responsive */
-@media (max-width: 768px){ .borea-row{ flex-direction:column; align-items:stretch; } .borea-btn{ width:100%; } }
-
-/* Accessibilité motion */
-@media (prefers-reduced-motion: reduce){ .borea-bg{ animation:none; } }
-
-
-/* Aurore boréale douce */
-#adieu-pamela .quiz-container {
-  background: linear-gradient(135deg, #020b0a 0%, #0a2e2a 50%, #020b0a 100%);
-  background-size: 200% 200%;
-  animation: auroraSoft 20s ease-in-out infinite;
-  border-radius: 15px;
-  padding: 25px;
-  margin: 30px auto;
-  max-width: 900px;
-  color: #ccc; /* gris clair lisible */
-  font-family: 'Georgia', serif;
-  text-align: justify;
-  box-shadow: 0 0 25px rgba(0, 128, 96, 0.2);
+    radial-gradient(circle at 20% 0%, rgba(14, 165, 198, .35), transparent 35%),
+    radial-gradient(circle at 80% 15%, rgba(246, 196, 83, .16), transparent 30%),
+    linear-gradient(180deg, var(--navy-950), var(--navy-900) 42%, #031f35 100%);
 }
 
-/* Titre */
-#adieu-pamela h2 {
-  color: #6fe2c2; /* vert d’eau doux */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.95), rgba(0,0,0,.25));
+}
+
+header {
+  background: linear-gradient(135deg, rgba(2, 11, 24, .94), rgba(7, 89, 133, .88));
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(246, 196, 83, .38);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, .45);
+}
+
+.title-container h1 {
+  font-size: clamp(1.7rem, 3vw, 3rem);
+  letter-spacing: .16em;
+  text-shadow: 0 0 24px rgba(14, 165, 198, .75);
+}
+
+.title-container h1::before,
+.title-container h1::after {
+  content: " ⚓ ";
+  color: var(--gold);
+  letter-spacing: 0;
+}
+
+.menu {
+  margin-top: 14px;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  background: rgba(2, 11, 24, .42);
+}
+
+.menu a {
+  border-radius: 999px;
+  color: var(--foam);
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  background: linear-gradient(135deg, var(--gold), #f59e0b);
+  color: #06162b;
+  outline: none;
+}
+
+section {
+  position: relative;
+  background: transparent;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+section > h2,
+.section-quiz-mission h2 {
+  color: var(--foam);
+  text-shadow: 0 0 18px rgba(14,165,198,.5);
+}
+
+.content-container,
+.books-container,
+[id^="book-summary"],
+#hommage-leo,
+.carousel-container,
+.quiz-shell,
+.content-box,
+.lettre-container,
+.quiz-container {
+  border: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(145deg, rgba(8,36,67,.82), rgba(2,11,24,.72));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 45px rgba(0,0,0,.36), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.content-container,
+.content-box,
+.lettre-container,
+.quiz-container { color: var(--foam); }
+.content-box p, .content-box h3, .content-box h4 { color: inherit; }
+p, .content-box p { color: rgba(248,251,255,.88); }
+p strong { color: var(--gold); }
+
+.book-item {
+  width: min(230px, 100%);
+  background: linear-gradient(145deg, rgba(14,165,198,.22), rgba(2,11,24,.82));
+  border: 1px solid rgba(246,196,83,.28);
+  transform-origin: center;
+}
+.book-item:hover { transform: translateY(-8px) scale(1.03); }
+.book-info a { color: var(--gold); }
+.book-info p { color: var(--muted); }
+
+[id^="book-summary"]::after,
+.quiz-shell::after,
+#hommage-leo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.08), transparent);
+  transform: translateX(-100%);
+  transition: transform .8s ease;
+}
+[id^="book-summary"]:hover::after,
+.quiz-shell:hover::after,
+#hommage-leo:hover::after { transform: translateX(100%); }
+
+.carousel-btn,
+#next-question,
+.quiz-final-card button,
+.quiz-container button {
+  background: linear-gradient(135deg, var(--gold), #f59e0b);
+  color: #06162b;
+  border: 0;
+  font-weight: 800;
+  box-shadow: 0 10px 25px rgba(246,196,83,.2);
+}
+
+.carousel-btn:hover,
+#next-question:hover,
+.quiz-final-card button:hover,
+.quiz-container button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Quiz mission */
+.section-quiz-mission { padding: 70px 20px; }
+.quiz-shell {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: clamp(22px, 4vw, 42px);
+  border-radius: 28px;
+  overflow: hidden;
+}
+.section-kicker {
   text-align: center;
-  cursor: pointer;
-  margin-top: 10px;
-  font-size: 1.6em;
-  transition: color 0.4s ease;
+  margin: 0 0 8px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-weight: 800;
+}
+.quiz-intro {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 22px;
+  color: var(--muted);
+}
+.quiz-status {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 18px 0 8px;
+  color: var(--foam);
+  font-weight: 700;
+}
+.quiz-progress {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  margin-bottom: 22px;
+}
+#quiz-progress-bar {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--ocean-500), var(--gold));
+  transition: width .35s ease;
+}
+#quizz .quizz-container {
+  background: rgba(2,11,24,.46);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 22px;
+  padding: clamp(18px, 3vw, 30px);
 }
 
-#adieu-pamela h2:hover {
-  color: #92f0d8; /* un peu plus lumineux au survol */
+.quiz-category {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto 14px;
+  padding: 7px 14px;
+  width: fit-content;
+  border: 1px solid rgba(246,196,83,.35);
+  border-radius: 999px;
+  background: rgba(246,196,83,.10);
+  color: var(--gold);
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .82rem;
 }
 
-/* Animation subtile d’aurore boréale */
-@keyframes auroraSoft {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.quiz-rank-scale {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 22px auto;
+}
+.quiz-rank-scale span {
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.07);
+  color: var(--muted);
+  font-size: .9rem;
 }
 
-/* Texte */
-#adieu-pamela .letter-content {
-  display: none;
-  margin-top: 15px;
-  font-size: 1.1em;
-  line-height: 1.7;
+#question {
+  font-family: Georgia, serif;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  color: var(--text);
+}
+.options { gap: 14px; }
+.option {
+  width: 100%;
+  max-width: 640px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(7,89,133,.85), rgba(8,36,67,.95));
+  text-align: left;
+  padding: 15px 18px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+}
+.option:hover:not(:disabled),
+.option:focus-visible {
+  background: linear-gradient(135deg, rgba(14,165,198,.95), rgba(7,89,133,.95));
+  transform: translateX(4px);
+  outline: 2px solid rgba(246,196,83,.45);
+}
+.option.correct { background: linear-gradient(135deg, #15803d, var(--success)) !important; }
+.option.wrong { background: linear-gradient(135deg, #991b1b, var(--danger)) !important; }
+.option.is-muted { opacity: .48; }
+#feedback {
+  min-height: 2.8em;
+  padding: 12px 14px;
+  border-radius: 14px;
+}
+.feedback-good { background: rgba(34,197,94,.13); color: #bbf7d0; }
+.feedback-bad { background: rgba(239,68,68,.14); color: #fecaca; }
+#next-question:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+.quiz-final-card { text-align: center; }
+.quiz-final-card h3 { color: var(--gold); font-size: clamp(1.6rem, 3vw, 2.4rem); }
+
+.reveal-ready {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal-ready.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Section "Souvenirs de passion" */
-.hidden-section {
-    display: none;
-    background: linear-gradient(135deg, #1b2735, #090a0f);
-    color: #f5f5f5;
-    border-radius: 12px;
-    padding: 40px 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    max-width: 900px;
-    margin: 40px auto;
-    font-family: 'Georgia', serif;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.hidden-section.visible {
+@media (max-width: 768px) {
+  header { align-items: stretch; }
+  .menu-toggle {
     display: block;
+    align-self: center;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 12px;
+    background: rgba(255,255,255,.08);
+  }
+  .menu {
+    display: none;
+    border-radius: 20px;
+    margin: 12px 0 0;
+  }
+  .menu.is-open, .menu.active { display: flex; }
+  .quiz-status { flex-direction: column; align-items: center; }
+  .option { text-align: center; }
+  .books-container { padding: 14px; }
 }
 
-.souvenir-toggle {
-    text-align: center;
-    margin: 20px 0 40px;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
 }
-
-.souvenir-toggle button {
-    background: linear-gradient(135deg, #cc0066, #99004d);
-    color: #fff;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-size: 1.1em;
-    font-family: 'Georgia', serif;
-    cursor: pointer;
-    transition: background 0.4s, transform 0.2s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
-
-.souvenir-toggle button:hover {
-    background: linear-gradient(135deg, #ff4081, #c2185b);
-    transform: scale(1.05);
-}
-
-/* Lettre 85 — Dernière page */
-#letter85 {
-  background: linear-gradient(145deg, #fefefe, #f5f5f8);
-  color: #222;
-  font-family: 'Georgia', serif;
-  border-left: 6px solid #c2185b;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-  padding: 30px;
-  margin-top: 40px;
-  transition: all 0.4s ease;
-}
-
-#letter85:hover {
-  transform: scale(1.01);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
-}
-
-#letter85 .love-letter-title {
-  color: #b71c1c;
-  text-align: center;
-  margin-bottom: 15px;
-  font-size: 1.8em;
-  letter-spacing: 1px;
-}
-
-#letter85 .love-letter-content {
-  font-size: 1.05em;
-  line-height: 1.8;
-  text-align: justify;
-}
-
-#letter85 em {
-  color: #7b1fa2;
-  font-style: italic;
-}
-
-#letter85 strong {
-  color: #2c3e50;
-}
-
